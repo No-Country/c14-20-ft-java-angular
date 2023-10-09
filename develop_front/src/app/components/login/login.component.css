@@ -9,7 +9,7 @@
   padding: 20px;
 }
 
-#formContent {
+#formContentLog {
   -webkit-border-radius: 10px 10px 10px 10px;
   border-radius: 10px 10px 10px 10px;
   background: #fff;
@@ -24,23 +24,39 @@
   border: solid black 1px;
 }
 
-#formFooter {
-  background-color: #f6f6f6;
-  border-top: 1px solid #dce8f1;
-  padding: 25px;
+#formContentSign {
+  -webkit-border-radius: 10px 10px 10px 10px;
+  border-radius: 10px 10px 10px 10px;
+  background: #fff;
+  padding: 30px;
+  width: 30vw;
+  max-width: 30vw;
+  height: 85vh;
+  position: relative;
+  padding-top: 10vh;
   text-align: center;
-  -webkit-border-radius: 0 0 10px 10px;
-  border-radius: 0 0 10px 10px;
+  border-radius: 35px;
+  border: solid black 1px;
 }
 
+#formFooter {
+  padding: 25px;
+  text-align: center;
+}
 
 h1 {
   color: #4e9b57;
   padding: 3%;
   
-  
 }
 
+p{
+  color: darkgrey;
+}
+
+a{
+  color: #4e9b57
+}
 
 
 /* FORM TYPOGRAPHY*/
