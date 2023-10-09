@@ -6,3 +6,9 @@
   width: 100%;
   object-fit: contain;
 }
+.grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* Crea 5 columnas de igual tamaño */
+  grid-gap: 10px;
+}

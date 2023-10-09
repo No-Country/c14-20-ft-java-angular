@@ -7,7 +7,7 @@
     "updatedAt": "2023-10-05T14:30:00Z",
     "price": 19.99,
     "stock": 50,
-    "image": "https://images.pexels.com/photos/2536965/pexels-photo-2536965.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    "image": "https://i.imgur.com/cZurIW1.jpg",
     "enable": true
   },
   {
@@ -18,7 +18,7 @@
     "updatedAt": "2023-10-04T16:45:00Z",
     "price": 24.99,
     "stock": 30,
-    "image": "https://images.pexels.com/photos/90946/pexels-photo-90946.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    "image": "https://i.imgur.com/6N5SIAI.jpg",
     "enable": true
   },
   {
@@ -29,7 +29,7 @@
     "updatedAt": "2023-10-03T10:45:00Z",
     "price": 29.99,
     "stock": 45,
-    "image": "https://images.pexels.com/photos/2533266/pexels-photo-2533266.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    "image": "https://i.imgur.com/57TesQb.jpg",
     "enable": true
   },
   {
@@ -40,7 +40,7 @@
     "updatedAt": "2023-10-02T13:15:00Z",
     "price": 14.99,
     "stock": 60,
-    "image": "https://images.pexels.com/photos/248412/pexels-photo-248412.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    "image": "https://i.imgur.com/NGITrW3.jpg",
     "enable": true
   },
   {
@@ -51,7 +51,7 @@
     "updatedAt": "2023-10-01T17:30:00Z",
     "price": 34.99,
     "stock": 25,
-    "image": "https://images.pexels.com/photos/4158/apple-iphone-smartphone-desk.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "image": "https://i.imgur.com/1BFcfGz.jpg",
     "enable": true
   },
   {
@@ -62,7 +62,7 @@
     "updatedAt": "2023-10-06T14:45:00Z",
     "price": 19.99,
     "stock": 55,
-    "image": "https://images.pexels.com/photos/1667071/pexels-photo-1667071.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "image": "https://i.imgur.com/83PWjP8.jpg",
     "enable": true
   },
   {
@@ -73,7 +73,7 @@
     "updatedAt": "2023-10-07T16:15:00Z",
     "price": 27.99,
     "stock": 40,
-    "image": "https://images.pexels.com/photos/3685523/pexels-photo-3685523.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "image": "https://i.imgur.com/q1PtYxU.jpg",
     "enable": true
   },
   {
@@ -84,7 +84,7 @@
     "updatedAt": "2023-10-08T18:00:00Z",
     "price": 39.99,
     "stock": 20,
-    "image": "https://images.pexels.com/photos/2866796/pexels-photo-2866796.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "image": "https://i.imgur.com/zGEhFTv.jpg",
     "enable": true
   },
   {
@@ -95,7 +95,7 @@
     "updatedAt": "2023-10-09T17:45:00Z",
     "price": 22.99,
     "stock": 35,
-    "image": "https://images.pexels.com/photos/205961/pexels-photo-205961.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "image": "https://i.imgur.com/xKMMlZS.jpg",
     "enable": true
   },
   {
@@ -106,9 +106,10 @@
     "updatedAt": "2023-10-10T19:30:00Z",
     "price": 17.99,
     "stock": 50,
-    "image": "https://images.pexels.com/photos/2697786/pexels-photo-2697786.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    "enable":true},
-      {
+    "image": "https://i.imgur.com/62cWxxX.jpg",
+    "enable": true
+  },
+  {
     "idProduct": 11,
     "name": "Producto 11",
     "description": "Descripción del Producto 11",
@@ -218,4 +219,4 @@
     "image": "https://images.pexels.com/photos/2629277/pexels-photo-2629277.jpeg?auto=compress&cs=tinysrgb&w=1600",
     "enable": true
   }
-  ]
+]

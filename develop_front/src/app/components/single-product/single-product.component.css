@@ -1,0 +1,22 @@
+.mat-card {
+  margin: 20px;
+  width: 200px;
+  height: auto;
+  text-align: center;
+}
+#card-image {
+  width: auto;
+  height: 120px;
+  object-fit: contain;
+}
+.mat-mdc-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+button {
+  width: 80%;
+  margin: 0 auto;
+  color: white;
+  background-color: var(--button);
+}
