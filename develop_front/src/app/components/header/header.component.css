@@ -1,0 +1,10 @@
+.mat-toolbar {
+  background-color: var(--primary);
+  color: var(--primary-text);
+  display: flex;
+  justify-content: space-between;
+}
+#logo {
+  width: 200px;
+  object-fit: contain;
+}

@@ -7,6 +7,7 @@ import { FooterComponent } from '../footer/footer.component';
 import { ProductsComponent } from '../products/products.component';
 import { ShoppingCartComponent } from '../shopping-cart/shopping-cart.component';
 import { MyAccountComponent } from '../my-account/my-account.component';
+import { SharedModule } from 'src/app/modules/shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,6 @@ import { MyAccountComponent } from '../my-account/my-account.component';
     ShoppingCartComponent,
     MyAccountComponent,
   ],
-  imports: [CommonModule, HomeRoutingModule],
+  imports: [CommonModule, HomeRoutingModule, SharedModule],
 })
 export class HomeModule {}
