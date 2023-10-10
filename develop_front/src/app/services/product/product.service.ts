@@ -11,6 +11,6 @@ export class ProductService {
   arrayObs: BehaviorSubject<Product[]> = new BehaviorSubject<Product[]>([]);
   constructor(private http: HttpClient) {}
   get products() {
-    return this.http.get<Product[]>('../../../assets/data/platos.json');
+    return this.http.get<Product[]>('../../../assets/data/jsonsd.json');
   }
 }

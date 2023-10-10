@@ -1,14 +1,25 @@
 .products-container {
   width: 100%;
-  height: 100vh;
+  height: auto;
 }
 #home-banner {
   width: 100%;
   object-fit: contain;
 }
+
 .grid {
-  width: 100%;
   display: grid;
-  grid-template-columns: repeat(5, 1fr); /* Crea 5 columnas de igual tamaño */
-  grid-gap: 10px;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 20px;
+}
+
+@media (max-width: 468px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0;
+  }
 }

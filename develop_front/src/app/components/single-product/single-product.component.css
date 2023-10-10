@@ -1,8 +1,12 @@
 .mat-card {
   margin: 20px;
   width: 200px;
-  height: auto;
+  min-width: 100px;
+  height: 270px;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 #card-image {
   width: auto;
@@ -14,9 +18,26 @@
   align-items: center;
   justify-content: center;
 }
-button {
+.add-to-cart-button {
   width: 80%;
   margin: 0 auto;
   color: white;
+  height: 17px;
   background-color: var(--button);
+  padding: 0;
+  border: none;
+  border-radius: 7px;
+}
+
+@media (max-width: 500px) {
+  .mat-card {
+    width: 150px;
+    height: 210px;
+  }
+  .mat-mdc-card-header {
+    padding: 0;
+  }
+  #card-image {
+    height: 90px;
+  }
 }
