@@ -31,8 +31,9 @@
 
 @media (max-width: 500px) {
   .mat-card {
-    width: 150px;
+    width: 125px;
     height: 210px;
+    margin: 0 auto;
   }
   .mat-mdc-card-header {
     padding: 0;

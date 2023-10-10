@@ -8,3 +8,14 @@
   width: 200px;
   object-fit: contain;
 }
+.menu {
+  display: none;
+}
+@media (max-width: 475px) {
+  .user {
+    display: none;
+  }
+  .menu {
+    display: flex;
+  }
+}
