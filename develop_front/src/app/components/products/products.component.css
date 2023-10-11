@@ -4,7 +4,7 @@
 }
 #home-banner {
   width: 100%;
-  object-fit: contain;
+  object-fit: cover;
 }
 
 .grid {
@@ -22,5 +22,8 @@
     grid-template-columns: repeat(2, 1fr);
     padding: 0;
     gap: 20px;
+  }
+  #home-banner {
+    height: 150px;
   }
 }

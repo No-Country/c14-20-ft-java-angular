@@ -19,14 +19,23 @@
   justify-content: center;
 }
 .add-to-cart-button {
-  width: 80%;
   margin: 0 auto;
   color: white;
-  height: 17px;
+
   background-color: var(--button);
   padding: 0;
   border: none;
   border-radius: 7px;
+  width: 100px;
+  height: 22px;
+  top: 625px;
+  left: 1109px;
+  border-radius: 10px;
+}
+.add-to-cart-button:hover {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border: 1px solid white;
+  cursor: pointer;
 }
 
 @media (max-width: 500px) {

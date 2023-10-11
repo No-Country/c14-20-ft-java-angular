@@ -6,7 +6,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
-
+import { MatBadgeModule } from '@angular/material/badge';
 @NgModule({
   declarations: [],
   imports: [
@@ -15,6 +15,7 @@ import { MatCardModule } from '@angular/material/card';
     MatButtonModule,
     MatToolbarModule,
     MatCardModule,
+    MatBadgeModule,
   ],
   exports: [
     CommonModule,
@@ -22,6 +23,7 @@ import { MatCardModule } from '@angular/material/card';
     MatButtonModule,
     MatToolbarModule,
     MatCardModule,
+    MatBadgeModule,
   ],
 })
 export class SharedModule {}
