@@ -11,6 +11,14 @@
 .menu {
   display: none;
 }
+.nav-bar-container {
+  width: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
 @media (max-width: 475px) {
   .user {
     display: none;

@@ -1,1 +1,186 @@
-<p>login works!</p>
+<!-- Button trigger modal 
+<button 
+mat-icon-button
+class="example-icon favorite-icon"
+aria-label="Example icon-button with heart icon"
+data-toggle="modal" 
+data-target="#exampleModalCenter">
+<mat-icon>person</mat-icon>
+</button>-->
+
+<!-- Modal -->
+<!--
+        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content" style="background: none; border: none;">
+                    <div class="section over-hide">
+                        <div class="container">
+                          <div class="row full-height justify-content-center">
+                            <div class="col-12 text-center align-self-center py-5">
+                              <div class="section text-center py-5 py-md-0">
+                                      <input class="pricing" type="checkbox" id="pricing" name="pricing"/>
+                                <div class="card-3d-wrap mx-auto">
+                                  <div class="card-3d-wrapper">
+                                    <div class="card-front">
+                                      <div id="formContentLog">
+                                        <h1><b>Iniciar Sesion</b></h1>
+                                        <br>
+                                        
+                                        <div class="form-group">
+                                          <div class="col-10">
+                                            <input type="text" id="login" class="form-control" name="login" placeholder="Correo Electronico">
+                                            <input type="text" id="password" class="form-control" name="login" placeholder="Contraseña">
+                                          </div>
+                                        </div>
+                                        <button class="buttonI"><b>Ingresar</b></button>
+                                        <div id="formFooter">
+                                          <p>¿No estas registrado?</p>
+                                          <label for="pricing" style="color: #b368aa;"><b><span class="block-diff"><span class="float-right">Registro</span></span></b></label>
+                                        </div>
+                                      </div>
+                                        </div>
+                                    <div class="card-back">
+                                      <div id="formContentSign">
+                                        <h1><b>Registrate</b></h1>
+                                        <br>
+                                      <div class="row-g3">
+                                        
+                                        <div class="form-group">
+                                          <div class="col-10">
+                                          <input type="text" id="login" class="form-control" name="login" placeholder="Nombre">
+                                          <input type="text" id="password" class="form-control" name="login" placeholder="Apellido">
+                                          <input type="text" id="login" class="form-control" name="login" placeholder="Correo Electronico">
+                                          <input type="text" id="password" class="form-control" name="login" placeholder="Contraseña">
+                                          </div>
+                                        </div>
+                                      </div>
+                                        <button class="buttonCC"><b>Crear Cuenta</b></button>
+                                        <div id="formFooter">
+                                          <p>¿Estas registrado?</p>
+                                          <label for="pricing" style="color: #b368aa;"><b><span class="block-diff">Inicio de Sesion<span class="float-right"></span></span></b></label>
+                                        </div>
+                                      </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                </div>
+              </div>
+            </div>-->
+
+<div class="section over-hide">
+  <div class="container">
+    <div class="row full-height justify-content-center">
+      <div class="col-12 text-center align-self-center py-5">
+        <div class="section text-center py-5 py-md-0">
+          <input class="pricing" type="checkbox" id="pricing" name="pricing" />
+          <div class="card-3d-wrap mx-auto">
+            <div class="card-3d-wrapper">
+              <div class="card-front">
+                <div id="formContentLog">
+                  <h1><b>Iniciar Sesion</b></h1>
+                  <br />
+                  <!-- Login Form -->
+                  <form class="form-group" [formGroup]="loginForm">
+                    <div class="col-10">
+                      <input
+                        type="email"
+                        id="login"
+                        class="form-control"
+                        name="login"
+                        placeholder="Correo Electronico"
+                        formControlName="email"
+                      />
+                      <input
+                        type="password"
+                        id="password"
+                        class="form-control"
+                        name="login"
+                        formControlName="password"
+                        placeholder="Contraseña"
+                      />
+                    </div>
+                  </form>
+                  <button class="buttonI"><b>Ingresar</b></button>
+                  <div id="formFooter">
+                    <p>¿No estas registrado?</p>
+                    <label for="pricing" style="color: #b368aa"
+                      ><b
+                        ><span class="block-diff"
+                          ><span class="float-right">Registro</span></span
+                        ></b
+                      ></label
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="card-back">
+                <div id="formContentSign">
+                  <h1><b>Registrate</b></h1>
+                  <br />
+                  <div class="row-g3">
+                    <!-- Register Form -->
+                    <form class="form-group" [formGroup]="registerForm">
+                      <div class="col-10">
+                        <input
+                          type="text"
+                          id="name"
+                          class="form-control"
+                          name="name"
+                          placeholder="Nombre"
+                          formControlName="name"
+                        />
+                        <input
+                          type="text"
+                          id="password"
+                          class="form-control"
+                          name="password"
+                          placeholder="Apellido"
+                          formControlName="lastName"
+                        />
+                        <input
+                          type="email"
+                          id="login"
+                          class="form-control"
+                          name="login"
+                          placeholder="Correo Electronico"
+                          formControlName="email"
+                        />
+                        <input
+                          type="password"
+                          id="password"
+                          class="form-control"
+                          name="login"
+                          placeholder="Contraseña"
+                          formControlName="password"
+                        />
+                      </div>
+                    </form>
+                  </div>
+                  <button class="buttonCC" (click)="onSubmit()">
+                    <b>Crear Cuenta</b>
+                  </button>
+                  <div id="formFooter">
+                    <p>¿Estas registrado?</p>
+                    <label for="pricing" style="color: #b368aa"
+                      ><b
+                        ><span class="block-diff"
+                          >Inicio de Sesion<span
+                            class="float-right"
+                          ></span></span></b
+                    ></label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--modal mobile-->

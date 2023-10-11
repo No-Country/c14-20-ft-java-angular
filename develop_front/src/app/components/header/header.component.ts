@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { User } from 'src/app/interfaces/User.interface';
+import { CredentialsService } from 'src/app/services/credentials.service';
 import { ShoppingCartService } from 'src/app/services/shopping-cart/shopping-cart.service';
 
 @Component({
@@ -7,12 +9,18 @@ import { ShoppingCartService } from 'src/app/services/shopping-cart/shopping-car
   styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent implements OnInit {
+  userData!: User;
   count!: number;
-  constructor(private shoppingCartService: ShoppingCartService) {}
+  constructor(
+    private shoppingCartService: ShoppingCartService,
+    private credentials: CredentialsService
+  ) {}
   ngOnInit() {
     this.shoppingCartService.productsInCart.subscribe((data) => {
       this.count = data.length;
       console.log(this.count);
+      this.userData = this.credentials.userData;
+      console.log(this.userData);
     });
   }
 }
