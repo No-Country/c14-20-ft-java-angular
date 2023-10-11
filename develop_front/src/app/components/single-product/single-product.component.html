@@ -1,0 +1,12 @@
+<mat-card class="mat-card" style="text-align: center">
+  <img mat-card-image id="card-image" src="{{ product.image }}" alt="" />
+
+  <mat-card-header>
+    <mat-card-title>{{ product.name }}</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <p>{{ product.price | currency }}</p>
+  </mat-card-content>
+
+  <button class="add-to-cart-button" (click)="onAddToCart()">Agregar</button>
+</mat-card>
