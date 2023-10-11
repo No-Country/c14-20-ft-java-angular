@@ -17,8 +17,23 @@
     <button mat-icon-button class="shopping-cart">
       <mat-icon [matBadge]="count" matBadgeColor="warn">shopping_cart</mat-icon>
     </button>
-    <button mat-icon-button class="user">
-      <mat-icon>person</mat-icon>
+    <button 
+    mat-icon-button
+    class="example-icon favorite-icon"
+    aria-label="Example icon-button with heart icon"
+    data-toggle="modal" 
+    data-target="#exampleModalCenter">
+    <mat-icon>person</mat-icon>
     </button>
   </div>
 </mat-toolbar>
+
+
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content" style="background: none; border: none;">
+      <!--use el footer xq no me aparecia el login y queria fijarme como se ve, me falta arreglar unos detalles de visual pero ya esta-->
+          <app-footer />
+      </div>
+    </div>
+  </div>
