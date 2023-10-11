@@ -19,7 +19,7 @@ export class HeaderComponent implements OnInit {
     this.shoppingCartService.productsInCart.subscribe((data) => {
       this.count = data.length;
       console.log(this.count);
-      this.userData = this.credentials.userData;
+      this.credentials.userData.subscribe((data) => (this.userData = data));
       console.log(this.userData);
     });
   }

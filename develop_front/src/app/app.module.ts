@@ -10,8 +10,27 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedModule } from './modules/shared/shared.module';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HeaderComponent } from './components/header/header.component';
+import { HomeComponent } from './components/home/home.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { ProductsComponent } from './components/products/products.component';
+import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
+import { MyAccountComponent } from './components/my-account/my-account.component';
+import { SingleProductComponent } from './components/single-product/single-product.component';
 @NgModule({
-  declarations: [AppComponent, LoginComponent, MessageComponent],
+  declarations: [
+    AppComponent,
+    LoginComponent,
+    MessageComponent,
+    HeaderComponent,
+    HomeComponent,
+    FooterComponent,
+    ProductsComponent,
+    ShoppingCartComponent,
+    MyAccountComponent,
+    SingleProductComponent,
+    LoginComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
