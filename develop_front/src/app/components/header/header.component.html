@@ -1,0 +1,24 @@
+<mat-toolbar>
+  <!-- <button
+    mat-icon-button
+    class="example-icon"
+    aria-label="Example icon-button with menu icon"
+  >
+    <mat-icon>menu</mat-icon>
+  </button> -->
+  <button class="menu" mat-icon-button>
+    <mat-icon>menu</mat-icon>
+  </button>
+  <img id="logo" src="../../../assets/img/logo-white.svg" alt="" />
+  <!-- <span>Delicious Health</span> -->
+
+  <!-- <span class="example-spacer"></span> -->
+  <div class="nav-bar-container">
+    <button mat-icon-button class="shopping-cart">
+      <mat-icon [matBadge]="count" matBadgeColor="warn">shopping_cart</mat-icon>
+    </button>
+    <button mat-icon-button class="user">
+      <mat-icon>person</mat-icon>
+    </button>
+  </div>
+</mat-toolbar>

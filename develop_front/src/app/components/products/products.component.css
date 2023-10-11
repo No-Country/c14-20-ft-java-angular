@@ -1,0 +1,29 @@
+.products-container {
+  width: 100%;
+  height: auto;
+}
+#home-banner {
+  width: 100%;
+  object-fit: cover;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 20px;
+}
+
+@media (max-width: 468px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0;
+    gap: 20px;
+  }
+  #home-banner {
+    height: 150px;
+  }
+}

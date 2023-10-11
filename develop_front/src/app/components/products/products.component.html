@@ -1,0 +1,30 @@
+<div class="products-container">
+  <picture>
+    <source
+      media="(max-width: 500px)"
+      srcset="../../../assets/img/home-banner-mobile.png"
+    />
+    <source
+      media="(max-width: 900px)"
+      srcset="../../../assets/img/home-banner-mobile.png"
+    />
+
+    <img
+      id="home-banner"
+      src="../../../assets/img/home-banner2.png"
+      alt="big-banner-logo"
+    />
+  </picture>
+  <!-- <img
+    id="home-banner"
+    src="../../../assets/img/home-banner2.png"
+    alt="home-banner"
+  /> -->
+  <div class="grid">
+    <app-single-product
+      *ngFor="let product of arrayProducts"
+      [product]="product"
+    >
+    </app-single-product>
+  </div>
+</div>
