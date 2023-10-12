@@ -27,3 +27,29 @@
     height: 150px;
   }
 }
+ 
+@media only screen and (max-width: 900px) {
+  .banner {
+    height: 20vh;
+    width: 100vw;
+    background-image: url("src/assets/img/home-banner-mobile.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  h1{
+    font-size: 1rem;
+  }
+}
+@media only screen and (min-width: 901px) {
+.banner {
+  height: 40vh;
+  width: 100vw;
+  background-image: url("src/assets/img/home-banner2.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+h1{
+  font-size: 3rem;
+}
+}
