@@ -25,13 +25,16 @@
   border: solid black 1px;
 }
 
+
 .form-group {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-#formFooter {
+#formFooter,
+#formFooter-1,
+#formFooter-2 {
   padding: 25px;
   text-align: center;
 }
@@ -55,8 +58,8 @@ a {
 .buttonI {
   background-color: #9dcca3;
   color: white;
-  padding: 15px;
   text-align: center;
+  padding: 15px;
   margin: 10%;
   display: inline-block;
   text-transform: uppercase;
@@ -74,8 +77,8 @@ a {
 .buttonCC {
   background-color: #9dcca3;
   color: white;
-  padding: 15px;
   text-align: center;
+  padding: 15px;
   margin: 10%;
   text-transform: uppercase;
   font-size: 2vh;
@@ -113,106 +116,49 @@ input[type="text"]:placeholder {
   color: #cccccc;
 }
 
-/*Card rotation */
+/*Card rotation*/
 
 [type="checkbox"]:checked,
 [type="checkbox"]:not(:checked) {
   position: absolute;
   left: -9999px;
 }
-.pricing:checked + label,
-.pricing:not(:checked) + label {
-  position: relative;
-  display: block;
-  text-align: center;
-  width: 260px;
-  height: 44px;
-  border-radius: 4px;
-  padding: 0;
-  margin: 0 auto;
-  cursor: pointer;
-  font-weight: 600;
-  text-transform: uppercase;
-  font-size: 14px;
-  letter-spacing: 1px;
-  line-height: 44px;
-  padding: 0 25px;
-  padding-right: 27px;
-  overflow: hidden;
-  color: #ffffff;
-  text-align: left;
-}
-.float-right {
-  float: right;
-}
-.pricing:checked + label:before,
-.pricing:not(:checked) + label:before {
+[type="radio"]:checked,
+[type="radio"]:not(:checked) {
   position: absolute;
-  content: "";
-  z-index: -2;
-  background-color: #9dcca3;
-  width: 100%;
-  height: 100%;
-  display: block;
-  top: 0;
-  left: 0;
-}
-.pricing:checked + label:after,
-.pricing:not(:checked) + label:after {
-  position: absolute;
-  content: "";
-  z-index: -1;
-  background-color: #ffffff;
-  width: 128px;
-  height: 40px;
-  display: block;
-  top: 2px;
-  left: 2px;
-  border-radius: 2px;
-  transition: left 300ms linear;
-}
-.pricing:checked + label:after {
-  left: 130px;
-}
-.block-diff {
-  display: block;
-  mix-blend-mode: difference;
+  left: -9999px;
 }
 
 .card-3d-wrap {
   position: relative;
   width: 340px;
-  max-width: calc(100% - 20px);
   height: 510px;
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
   perspective: 1000px;
-  margin-top: 90px;
+  
 }
-.card-3d-wrapper {
+.card-3d-wrapper-1{
   width: 100%;
   height: 100%;
   position: absolute;
   align-items: center;
   justify-content: center;
-  top: 0;
-  left: 0;
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
-  transition: transform 300ms 100ms ease-out;
+  transition: transform ease-out;
 }
 .card-front,
-.card-back {
+.card-log,
+.card-reg {
   width: 100%;
   height: 100%;
-  background-color: rgba(255, 255, 255, 1);
+  background:none;
   position: absolute;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 6px;
-  left: 0;
-  top: 0;
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
   -webkit-backface-visibility: hidden;
@@ -221,12 +167,70 @@ input[type="text"]:placeholder {
   backface-visibility: hidden;
   box-shadow: 0 12px 35px 0 rgba(16, 39, 112, 0.07);
 }
-.card-back {
+
+.card-reg {
   transform: rotateY(180deg);
 }
-.pricing:checked ~ .card-3d-wrap .card-3d-wrapper {
+
+.register:checked ~ .card-3d-wrap .card-3d-wrapper-1{
   transform: rotateY(180deg);
-  transition: transform 300ms 100ms ease-out;
+  transition: transform ease-out;
+}
+
+.rTOl:checked ~ .card-3d-wrap .card-3d-wrapper-1 {
+  transform: rotateY(-180deg);
+  transition: transform ease-out;
+}
+
+@media only screen and (max-width: 800px) {
+  #formContentHome {
+    min-width: 85vw;
+    background: #fff;
+    position: relative;
+    padding-top: 4vh;
+    padding-bottom: 4vh;
+    text-align: center;
+    border-radius: 35px;
+    border: solid black 1px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .card-log {
+    transform: rotateY(180deg);
+  }
+  .card-reg {
+    transform: rotateY(90deg);
+  }
+  .login:checked ~ .card-3d-wrap .card-3d-wrapper-1{
+    transform: rotateY(180deg);
+    transition: transform ease-out;
+  }
+  .register:checked ~ .card-3d-wrap .card-3d-wrapper-1 {
+    transform: rotateY(270deg);
+    transition: transform ease-out;
+  }
+  .rTOl:checked ~ .card-3d-wrap .card-3d-wrapper-1 {
+    transform: rotateY(-180deg);
+    transition: transform ease-out;
+  }
+  #formFooter-2{
+    display: none;
+  }
+
+  #formContentLog,
+  #formContentSign  {
+    min-width: 80vw;
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  #formContentHome {
+    display: none;
+  }
+  #formFooter-1{
+    display: none;
+  }
 }
 
 @keyframes border-transform {
