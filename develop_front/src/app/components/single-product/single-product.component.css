@@ -1,0 +1,53 @@
+.mat-card {
+  margin: 20px;
+  width: 200px;
+  min-width: 100px;
+  height: 270px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+#card-image {
+  width: auto;
+  height: 120px;
+  object-fit: contain;
+}
+.mat-mdc-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.add-to-cart-button {
+  margin: 0 auto;
+  color: white;
+
+  background-color: var(--button);
+  padding: 0;
+  border: none;
+  border-radius: 7px;
+  width: 100px;
+  height: 22px;
+  top: 625px;
+  left: 1109px;
+  border-radius: 10px;
+}
+.add-to-cart-button:hover {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border: 1px solid white;
+  cursor: pointer;
+}
+
+@media (max-width: 500px) {
+  .mat-card {
+    width: 125px;
+    height: 210px;
+    margin: 0 auto;
+  }
+  .mat-mdc-card-header {
+    padding: 0;
+  }
+  #card-image {
+    height: 90px;
+  }
+}
