@@ -17,6 +17,7 @@ import { ProductsComponent } from './components/products/products.component';
 import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
 import { MyAccountComponent } from './components/my-account/my-account.component';
 import { SingleProductComponent } from './components/single-product/single-product.component';
+import { ProductInfoComponent } from './components/product-info/product-info.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,6 +31,7 @@ import { SingleProductComponent } from './components/single-product/single-produ
     MyAccountComponent,
     SingleProductComponent,
     LoginComponent,
+    ProductInfoComponent,
   ],
   imports: [
     BrowserModule,
