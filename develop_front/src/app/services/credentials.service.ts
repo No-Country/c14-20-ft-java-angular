@@ -18,4 +18,5 @@ export class CredentialsService {
   get userData() {
     return this.userObs.asObservable();
   }
+  LogOut() {}
 }

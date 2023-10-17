@@ -106,7 +106,7 @@
     "updatedAt": "2023-10-10T19:30:00Z",
     "price": 7.0,
     "stock": 50,
-    "image": "https://images.pexels.com/photos/2697786/pexels-photo-2697786.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "image": "https://i.imgur.com/gY7DRXn.jpg",
     "enable": true
   },
   {
@@ -117,7 +117,7 @@
     "updatedAt": "2023-10-20T22:00:00Z",
     "price": 5.5,
     "stock": 50,
-    "image": "https://images.pexels.com/photos/341523/pexels-photo-341523.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "image": "https://i.imgur.com/3waNT8y.jpg",
     "enable": true
   },
   {
@@ -128,7 +128,7 @@
     "updatedAt": "2023-10-21T23:45:00Z",
     "price": 2.0,
     "stock": 35,
-    "image": "https://www.pexels.com/es-es/foto/panqueque-con-rodajas-de-fresa-376464/",
+    "image": "https://i.imgur.com/gCYQEd4.jpg",
     "enable": true
   },
   {
@@ -139,7 +139,7 @@
     "updatedAt": "2023-10-22T08:30:00Z",
     "price": 1.5,
     "stock": 28,
-    "image": "https://images.pexels.com/photos/1616097/pexels-photo-1616097.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    "image": "https://i.imgur.com/EJfQcVF.jpg",
     "enable": true
   },
   {
@@ -150,7 +150,7 @@
     "updatedAt": "2023-10-23T10:15:00Z",
     "price": 1.5,
     "stock": 42,
-    "image": "https://images.pexels.com/photos/4829069/pexels-photo-4829069.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    "image": "https://i.imgur.com/xKMMlZS.jpg",
     "enable": true
   },
   {
@@ -161,7 +161,7 @@
     "updatedAt": "2023-10-24T12:00:00Z",
     "price": 2.0,
     "stock": 23,
-    "image": "https://images.pexels.com/photos/3685530/pexels-photo-3685530.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    "image": "https://i.imgur.com/0kaq8Bd.jpg",
     "enable": true
   },
   {
@@ -183,7 +183,7 @@
     "updatedAt": "2023-10-26T15:30:00Z",
     "price": 2.0,
     "stock": 35,
-    "image": "https://images.pexels.com/photos/3056057/pexels-photo-3056057.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    "image": "https://i.imgur.com/RXQDBQg.jpg",
     "enable": true
   },
   {
@@ -194,7 +194,7 @@
     "updatedAt": "2023-10-27T17:15:00Z",
     "price": 2.5,
     "stock": 28,
-    "image": "https://images.pexels.com/photos/5709271/pexels-photo-5709271.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    "image": "https://i.imgur.com/qDvJKRK.jpg",
     "enable": true
   },
   {
@@ -205,7 +205,7 @@
     "updatedAt": "2023-10-28T19:00:00Z",
     "price": 1.8,
     "stock": 42,
-    "image": "https://images.pexels.com/photos/7129160/pexels-photo-7129160.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    "image": "https://i.imgur.com/Go34oER.jpg",
     "enable": true
   },
   {
@@ -216,7 +216,7 @@
     "updatedAt": "2023-10-29T21:45:00Z",
     "price": 3.0,
     "stock": 23,
-    "image": "https://images.pexels.com/photos/2629277/pexels-photo-2629277.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    "image": "https://i.imgur.com/RkAskJr.jpg",
     "enable": true
   }
 ]
