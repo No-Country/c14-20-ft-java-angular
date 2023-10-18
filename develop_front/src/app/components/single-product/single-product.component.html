@@ -1,4 +1,4 @@
-<mat-card class="mat-card" style="text-align: center">
+<mat-card class="mat-card" style="text-align: center; border: none;">
   <img mat-card-image id="card-image" src="{{ product.image }}" alt="" />
 
   <mat-card-header>
@@ -9,4 +9,24 @@
   </mat-card-content>
 
   <button class="add-to-cart-button" (click)="onAddToCart()">Agregar</button>
+  <div class="number-input justify-content-center align-items-center" style="padding-top: 20px; border: none; padding-bottom: 20px;">
+    <div style="border: none;">
+      <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus"
+    style="border: none;background: none;
+      background-color: #9dcca3; border-radius: 10px; 
+      width: 34px; height: 28px; margin: 3px"
+        ><i class="bi bi-dash" style="color: white;"></i>
+      </button>
+    <input class="quantity" min="0" name="quantity" value="1" type="number"
+    style="align-items: center; color: #656565; 
+      font-size: 20px; height: 38px; width: 100px;border: solid #9dcca3; border-radius:10px; ">
+    <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"
+    style="border: none;background: none;
+      background-color: #9dcca3;border-radius:10px; 
+      width: 34px; height: 28px; margin: 3px"
+      ><i class="bi bi-plus" style="color: white;"></i>
+    </button>
+    </div>
+    
+  </div>
 </mat-card>

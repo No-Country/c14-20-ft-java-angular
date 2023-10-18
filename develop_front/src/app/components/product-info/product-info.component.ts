@@ -8,4 +8,6 @@ import { Product } from 'src/app/interfaces/Product.interface';
 })
 export class ProductInfoComponent {
   @Input() product!: Product;
+
+  
 }
