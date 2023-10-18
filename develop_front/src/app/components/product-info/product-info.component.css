@@ -1,50 +1,37 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css");
 
-.id-card-wrapper {
-    height: 90vh;
-    width:100%;
-    display: flex;
+.row{
+  height: 90vh;
+  width: 100%;
+}
+.product{
+  border-radius: 50%;
+}
+
+@media only screen and (min-width: 800px) {
+  .responsive{
+   display: none;
   }
-  .id-card {
-    border: none;
-    margin: auto;
-    color: #fff;
-    padding: 1em;
-  }
-  
-  .profile-row {
-    display: flex;
-  }
-  .profile-row .dp {
-    flex-basis: 33.3%;
-    position: relative;
-    margin: 24px;
-    align-self: center;
-  }
-  
-  
-  .profile-row .dp img {
-    max-width: 100%;
-    border-radius: 50%;
-    display: block;
-    border: none;
-  }
-  .profile-row .desc {
-    padding: 1em;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .page-link{
-    border: none;
+ }
+  @media only screen and (max-width: 800px) {
+   .noresponsive{
+    display: none;
+   }
   }
 
-  .pagination{
-    border: solid 1px;
-    border-color: #9dcca3;
-    width: 213px;
-    height: 64px;
-    border-radius: 10px;
-    justify-content: center;
-    align-items: center;
+
+  @media only screen and (max-width: 800px) {
+    .profile-row .dp img {
+      max-width: 80vw;
+      border-radius: 50%;
+      display: block;
+      border: none;
+    }
+    .space{
+      display: none;
+    }
+
+    .product{
+      width: 80vw;
+    }
   }
