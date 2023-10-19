@@ -15,6 +15,9 @@ export class SingleProductComponent implements OnInit {
     this.shoppingCartService.productsInCart.subscribe((data) =>
       console.log(data)
     );
+    this.singleProductCount = this.shoppingCartService.getSingleProductCount(
+      this.product
+    );
   }
   onAddToCart() {
     this.shoppingCartService.addToCart(this.product);
