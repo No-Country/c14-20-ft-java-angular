@@ -24,7 +24,7 @@ export class ShoppingCartComponent implements OnInit {
           image: 'https://i.imgur.com/cZurIW1.jpg',
           enable: true,
         },
-        quantity: 1,
+        quantity: 4,
       },
       {
         product: {
@@ -54,6 +54,62 @@ export class ShoppingCartComponent implements OnInit {
         },
         quantity: 1,
       },
+      {
+        product: {
+          idProduct: 3,
+          name: 'Vegetales crudos',
+          description: 'Zanahoria, arbejas, tomates secos y arroz',
+          createdAt: '2023-10-03T10:30:00Z',
+          updatedAt: '2023-10-03T10:45:00Z',
+          price: 3,
+          stock: 45,
+          image: 'https://i.imgur.com/57TesQb.jpg',
+          enable: true,
+        },
+        quantity: 1,
+      },
+      {
+        product: {
+          idProduct: 3,
+          name: 'Vegetales crudos',
+          description: 'Zanahoria, arbejas, tomates secos y arroz',
+          createdAt: '2023-10-03T10:30:00Z',
+          updatedAt: '2023-10-03T10:45:00Z',
+          price: 3,
+          stock: 45,
+          image: 'https://i.imgur.com/57TesQb.jpg',
+          enable: true,
+        },
+        quantity: 1,
+      },
+      // {
+      //   product: {
+      //     idProduct: 3,
+      //     name: 'Vegetales crudos',
+      //     description: 'Zanahoria, arbejas, tomates secos y arroz',
+      //     createdAt: '2023-10-03T10:30:00Z',
+      //     updatedAt: '2023-10-03T10:45:00Z',
+      //     price: 3,
+      //     stock: 45,
+      //     image: 'https://i.imgur.com/57TesQb.jpg',
+      //     enable: true,
+      //   },
+      //   quantity: 1,
+      // },
+      // {
+      //   product: {
+      //     idProduct: 3,
+      //     name: 'Vegetales crudos',
+      //     description: 'Zanahoria, arbejas, tomates secos y arroz',
+      //     createdAt: '2023-10-03T10:30:00Z',
+      //     updatedAt: '2023-10-03T10:45:00Z',
+      //     price: 3,
+      //     stock: 45,
+      //     image: 'https://i.imgur.com/57TesQb.jpg',
+      //     enable: true,
+      //   },
+      //   quantity: 1,
+      // },
     ];
     // this.shoppingCartService.productsInCart.subscribe((data) => {
     //   this.cartProducts = data;
