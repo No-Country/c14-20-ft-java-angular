@@ -18,6 +18,7 @@ import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.
 import { MyAccountComponent } from './components/my-account/my-account.component';
 import { SingleProductComponent } from './components/single-product/single-product.component';
 import { ShoppingCartSingleComponent } from './components/shopping-cart-single/shopping-cart-single.component';
+import { ProductInfoComponent } from './components/product-info/product-info.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,6 +33,7 @@ import { ShoppingCartSingleComponent } from './components/shopping-cart-single/s
     SingleProductComponent,
     LoginComponent,
     ShoppingCartSingleComponent,
+    ProductInfoComponent,
   ],
   imports: [
     BrowserModule,

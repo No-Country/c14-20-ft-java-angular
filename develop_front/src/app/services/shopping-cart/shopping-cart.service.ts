@@ -26,11 +26,26 @@ export class ShoppingCartService {
     }
     this.productsObs.next(this.arrayProducts);
     console.log(this.arrayProducts);
-    // this.updateTotal();
-    // console.log(this.arrayProducts);
-    // this.toastr.success('added');
   }
-
+  deleteFromCart(product: Product) {
+    let foundIndex = this.arrayProducts.findIndex(
+      (e) => e.product.idProduct === product.idProduct
+    );
+    if (foundIndex !== -1) {
+      this.arrayProducts[foundIndex]['quantity'] -= 1;
+    }
+    this.productsObs.next(this.arrayProducts);
+  }
+  getSingleProductCount(prod: Product): number {
+    let foundProduct = this.arrayProducts.find(
+      (e: CartProduct) => e.product.idProduct === prod.idProduct
+    );
+    if (foundProduct && foundProduct.quantity !== 0) {
+      return foundProduct.quantity;
+    } else {
+      return 0;
+    }
+  }
   get productsInCart() {
     return this.productsObs.asObservable();
   }
