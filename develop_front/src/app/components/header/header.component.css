@@ -4,6 +4,9 @@
   display: flex;
   justify-content: space-between;
 }
+img{
+  cursor: pointer;
+}
 #logo {
   width: 200px;
   object-fit: contain;

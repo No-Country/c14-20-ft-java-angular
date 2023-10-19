@@ -19,6 +19,7 @@ import { MyAccountComponent } from './components/my-account/my-account.component
 import { SingleProductComponent } from './components/single-product/single-product.component';
 import { ShoppingCartSingleComponent } from './components/shopping-cart-single/shopping-cart-single.component';
 import { ProductInfoComponent } from './components/product-info/product-info.component';
+import { EnvioComponent } from './components/envio/envio.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { ProductInfoComponent } from './components/product-info/product-info.com
     LoginComponent,
     ShoppingCartSingleComponent,
     ProductInfoComponent,
+    EnvioComponent,
   ],
   imports: [
     BrowserModule,
