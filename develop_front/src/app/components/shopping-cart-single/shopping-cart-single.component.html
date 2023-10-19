@@ -1,0 +1,8 @@
+<div class="single-cart-product">
+  <div class="img-title">
+    <img id="cart-img" src="{{ cartProduct.product.image }}" alt="" />
+    <h3 class="name">{{ cartProduct.product.name }}</h3>
+  </div>
+  <h3 class="quantity">{{ cartProduct.quantity }}</h3>
+  <h3 class="price">{{ cartProduct.product.price | currency }}</h3>
+</div>

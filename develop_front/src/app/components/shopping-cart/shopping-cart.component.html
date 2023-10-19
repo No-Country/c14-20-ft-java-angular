@@ -1,1 +1,28 @@
-<p>shopping-cart works!</p>
+<div class="shooping-cart-container">
+  <h1>Mi Carrito</h1>
+  <div class="table-price-container">
+    <div class="table">
+      <div class="table-titles">
+        <h3>Resumen de mi Compra</h3>
+        <h3>Cantidad</h3>
+        <h3>Precio</h3>
+      </div>
+      <app-shopping-cart-single
+        *ngFor="let cartProduct of cartProducts"
+        [cartProduct]="cartProduct"
+      ></app-shopping-cart-single>
+    </div>
+    <div class="price">
+      <div>
+        <h3>Resumen del pedido</h3>
+      </div>
+      <div>
+        <h3>Subtotal: $13000</h3>
+      </div>
+      <div>
+        <h3>TOTAL: $13000</h3>
+      </div>
+      <button class="pay">Pagar</button>
+    </div>
+  </div>
+</div>

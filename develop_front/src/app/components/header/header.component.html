@@ -9,12 +9,21 @@
   <button class="menu" mat-icon-button>
     <mat-icon>menu</mat-icon>
   </button>
-  <img id="logo" src="../../../assets/img/logo-white.svg" alt="" />
+  <img
+    (click)="redirectTo('/home')"
+    id="logo"
+    src="../../../assets/img/logo-white.svg"
+    alt="home-logo"
+  />
   <!-- <span>Delicious Health</span> -->
 
   <!-- <span class="example-spacer"></span> -->
   <div class="nav-bar-container">
-    <button mat-icon-button class="shopping-cart">
+    <button
+      mat-icon-button
+      class="shopping-cart"
+      (click)="redirectTo('/home/shopping-cart')"
+    >
       <mat-icon [matBadge]="count" matBadgeColor="warn">shopping_cart</mat-icon>
     </button>
 
