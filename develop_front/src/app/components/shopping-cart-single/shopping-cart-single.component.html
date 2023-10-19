@@ -1,8 +1,61 @@
-<div class="single-cart-product">
+<div *ngIf="singleProductCount !== 0" class="single-cart-product">
   <div class="img-title">
     <img id="cart-img" src="{{ cartProduct.product.image }}" alt="" />
     <h3 class="name">{{ cartProduct.product.name }}</h3>
   </div>
-  <h3 class="quantity">{{ cartProduct.quantity }}</h3>
+  <div
+    *ngIf="singleProductCount !== 0"
+    class="number-input justify-content-center align-items-center"
+    style="border: none"
+  >
+    <div style="border: none">
+      <button
+        (click)="onDelete()"
+        class="minus"
+        style="
+          border: none;
+          background: none;
+          background-color: #9dcca3;
+          border-radius: 10px;
+          width: 34px;
+          height: 28px;
+          margin: 3px;
+        "
+      >
+        <i class="bi bi-dash" style="color: white"></i>
+      </button>
+      <input
+        class="quantity"
+        min="0"
+        name="quantity"
+        value="{{ singleProductCount }}"
+        type="number"
+        style="
+          align-items: center;
+          color: #656565;
+          font-size: 20px;
+          height: 38px;
+          width: 100px;
+          border: solid #9dcca3;
+          border-radius: 10px;
+        "
+      />
+      <button
+        (click)="onAddToCart()"
+        class="plus"
+        style="
+          border: none;
+          background: none;
+          background-color: #9dcca3;
+          border-radius: 10px;
+          width: 34px;
+          height: 28px;
+          margin: 3px;
+        "
+      >
+        <i class="bi bi-plus" style="color: white"></i>
+      </button>
+    </div>
+  </div>
   <h3 class="price">{{ cartProduct.product.price | currency }}</h3>
 </div>
