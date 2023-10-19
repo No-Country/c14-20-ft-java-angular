@@ -10,7 +10,7 @@ import { ShoppingCartService } from 'src/app/services/shopping-cart/shopping-car
 })
 export class ShoppingCartSingleComponent implements OnInit {
   singleProductCount: number = 0;
-
+  subTotalPrice: Number = 0;
   @Input() cartProduct!: CartProduct;
   constructor(
     private router: Router,
@@ -23,6 +23,8 @@ export class ShoppingCartSingleComponent implements OnInit {
     this.singleProductCount = this.shoppingCartService.getSingleProductCount(
       this.cartProduct.product
     );
+    this.subTotalPrice =
+      this.singleProductCount * this.cartProduct.product.price;
   }
   onAddToCart() {
     this.shoppingCartService.addToCart(this.cartProduct.product);
@@ -30,6 +32,7 @@ export class ShoppingCartSingleComponent implements OnInit {
       this.cartProduct.product
     );
     console.log(this.singleProductCount);
+    this.updateQuantity();
   }
   onDelete() {
     this.shoppingCartService.deleteFromCart(this.cartProduct.product);
@@ -37,5 +40,11 @@ export class ShoppingCartSingleComponent implements OnInit {
       this.cartProduct.product
     );
     console.log(this.singleProductCount);
+    this.updateQuantity();
+  }
+  updateQuantity() {
+    this.subTotalPrice =
+      this.singleProductCount * this.cartProduct.product.price;
+    console.log(this.subTotalPrice);
   }
 }

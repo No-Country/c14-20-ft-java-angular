@@ -28,6 +28,7 @@
         class="quantity"
         min="0"
         name="quantity"
+        (change)="updateQuantity()"
         value="{{ singleProductCount }}"
         type="number"
         style="
@@ -57,5 +58,5 @@
       </button>
     </div>
   </div>
-  <h3 class="price">{{ cartProduct.product.price | currency }}</h3>
+  <h3 class="price">${{ subTotalPrice }}.00</h3>
 </div>
