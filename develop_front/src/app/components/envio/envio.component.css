@@ -1,0 +1,46 @@
+.form-check{
+    display: inline-block;
+    margin: 0 10px;
+    margin-left: 20px;
+}
+.radio-check{
+    display: flex;
+	flex-flow: row wrap;
+}
+
+.header-form{
+    margin-top: 60px;
+    margin-bottom: 40px;
+}
+
+.input-group{
+    margin-bottom: 10px;
+    
+}
+
+input{
+    border-radius: 10px;
+    border: solid 2px #9dcca3;
+}
+
+.footer-form{
+    margin-top: 60px;
+}
+h3{
+    font-size: 25px;
+}
+
+p, h1, h3{
+    color: #656565;
+    font-weight: bold;
+}
+
+input::placeholder{
+    font-size: 25px;
+    font-weight: bold;
+}
+
+[type="radio"]:checked{
+    background-color: #9dcca3;
+
+}
