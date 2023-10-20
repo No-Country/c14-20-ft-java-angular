@@ -8,6 +8,14 @@
   border: 1px solid var(--button);
   border-radius: 20px;
   margin: 10px 0;
+
+    
+  @media only screen and (max-width: 500px) {
+    display:inline-block;
+    height: 30vh;
+    margin-left: 0;
+    
+}
 }
 .single-cart-product > * {
   flex: 1;
@@ -16,14 +24,18 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
 }
 #cart-img {
-  height: 120px;
+ max-height: 12vh;
   flex: 2;
   object-fit: contain;
 }
 .img-title h3 {
   flex: 1;
+  color: #656565;
+  font-weight: bold;
+  font-size: 2.5vh;
 }
 
 .price {
@@ -33,6 +45,10 @@
   letter-spacing: 0em;
   text-align: center;
   color: var(--primary);
+
+  @media only screen and (max-width: 500px) {
+  margin-top: 10px;
+}
 }
 
 
@@ -48,26 +64,49 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .number-input {
-  border: 2px solid #ddd;
+  border: none;
   display: inline-flex;
+  @media only screen and (max-width: 500px) {
+    margin-top: 10px;
+  }
 }
 
 .number-input,
 .number-input * {
   box-sizing: border-box;
+
+}
+
+.number-input-box{
+  border: solid #9dcca3; 
+  max-width: 10vw; 
+  border-radius:10px;
+  align-items: center;
+  justify-content: center;
+  @media only screen and (max-width: 500px) {
+    min-width: 53vw;
+}
 }
 
 .number-input button {
   outline:none;
-  background-color: transparent;
   border: none;
   align-items: center;
   justify-content: center;
-  width: 3rem;
-  height: 3rem;
   cursor: pointer;
-  margin: 0;
   position: relative;
+  background: none;
+  background-color: #9dcca3; 
+  border-radius: 10px; 
+  width: 1.8vw; 
+  height: 3vh; 
+  margin: 5px;
+  @media only screen and (max-width: 500px) {
+    min-width: 10vw; 
+    min-height: 4vh; 
+    margin: 2px;
+}
+
 }
 
 .number-input button:after {
@@ -81,12 +120,15 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .number-input input[type=number] {
-  font-family: sans-serif;
-  padding: .5rem;
-  border: solid #ddd;
   border-width: 0 2px;
-  font-size: 2rem;
-  height: 3rem;
-  font-weight: bold;
+  height: 2.5rem;
   text-align: center;
+  align-items: center; 
+  color: #656565; 
+  font-size: 30px; 
+  width: 5vw;
+  border: none;
+  @media only screen and (max-width: 500px) {
+    min-width: 28vw;
+}
 }

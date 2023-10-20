@@ -2,10 +2,17 @@
     display: inline-block;
     margin: 0 10px;
     margin-left: 20px;
+    @media only screen and (max-width: 500px) {
+        text-align: center;
+      }
+
 }
 .radio-check{
     display: flex;
 	flex-flow: row wrap;
+    @media only screen and (max-width: 500px) {
+        display: inline-block;
+      }
 }
 
 .header-form{
@@ -14,8 +21,7 @@
 }
 
 .input-group{
-    margin-bottom: 10px;
-    
+    margin-bottom: 10px; 
 }
 
 input{
@@ -25,6 +31,15 @@ input{
 
 .footer-form{
     margin-top: 60px;
+    @media only screen and (max-width: 500px) {
+        text-align: center;
+      }
+    
+}
+
+.footer-form .finish{
+    text-align: right;
+    
 }
 h3{
     font-size: 25px;
@@ -43,4 +58,29 @@ input::placeholder{
 [type="radio"]:checked{
     background-color: #9dcca3;
 
+}
+ .p{
+    @media only screen and (max-width: 500px) {
+        padding-top: 40px;
+      }
+ }
+.finish{
+ padding-top: 20px;
+ justify-content: right;
+}
+.label{
+    background-color: #9dcca3; 
+    cursor: pointer; 
+    color: white;
+    font-size: 3vh;
+    font-weight: bold;
+    border-radius: 15px; 
+    height: 60px; 
+    width: 300px; 
+    padding-top: 20px;
+    text-align: center;
+
+    @media only screen and (max-width: 500px) {
+        width: 100%;
+      }
 }

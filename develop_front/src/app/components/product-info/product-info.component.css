@@ -8,6 +8,35 @@
   border-radius: 50%;
 }
 
+.title{
+  color: #656565; 
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.description{
+  color: #656565; 
+  font-size: 32px;
+}
+
+.price{
+  color:#4e9b57; 
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.add-cart{
+  background-color: #9dcca3; 
+  cursor: pointer; 
+  color: white; 
+  padding: 15px;
+  font-size: 28px;
+  border-radius: 10px; 
+  height: 62px; 
+  width: 213px ; 
+  text-align: center; 
+  border: none;
+}
 
 input[type="number"] {
   -webkit-appearance: textfield;
@@ -21,9 +50,18 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .number-input {
-  border: 2px solid #ddd;
   display: inline-flex;
+  padding-top: 20px; 
+  border: none; 
+  padding-bottom: 20px;
 }
+
+.number-input-box{
+  border: solid #9dcca3; 
+  width: 213px; 
+  border-radius:10px;
+}
+
 
 .number-input,
 .number-input * {
@@ -32,15 +70,19 @@ input[type=number]::-webkit-outer-spin-button {
 
 .number-input button {
   outline:none;
-  background-color: transparent;
   border: none;
   align-items: center;
   justify-content: center;
   width: 3rem;
   height: 3rem;
   cursor: pointer;
-  margin: 0;
   position: relative;
+  background: none;
+  background-color: #9dcca3; 
+  border-radius: 10px; 
+  width: 38px; 
+  height: 32px; 
+  margin: 5px;
 }
 
 .number-input button:after {
@@ -54,14 +96,16 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .number-input input[type=number] {
-  font-family: sans-serif;
-  padding: .5rem;
-  border: solid #ddd;
   border-width: 0 2px;
   font-size: 2rem;
   height: 3rem;
   font-weight: bold;
   text-align: center;
+  align-items: center; 
+  color: #656565; 
+  font-size: 30px; 
+  width: 110px;
+  border: none; 
 }
 
 

@@ -21,12 +21,16 @@
   margin: 20px;
   height: 100%; /* Establece la altura específica para el contenedor de la tabla */
   overflow-y: auto;
-  margin: 20px;
+
 }
 .table-titles {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+
+  @media only screen and (max-width: 500px){
+   display: none;
+}
 }
 .table-titles h3 {
   flex: 1;
@@ -45,6 +49,10 @@
   flex-direction: column;
   justify-content: space-around;
   border: 1px solid var(--button);
+
+  @media only screen and (max-width: 500px){
+    border: none;
+ }
 }
 .pay {
   margin: 0 auto;
@@ -59,13 +67,18 @@
   left: 1109px;
   font-weight: 700;
   font-size: 20px;
+
 }
-.price-subsection {
+.price-subsection,
+.price-subsection-total {
   display: flex;
   justify-content: space-around;
   align-items: center;
   border-bottom: 1px solid black;
   margin: 0 20px;
+  @media only screen and (max-width: 500px){
+    justify-content:end;
+  }
 }
 
 .price-title {
@@ -84,4 +97,8 @@ h1, h3{
 .cart-single{
   margin-left: 35px;
   margin-right: 20px;
+}
+
+@media only screen and (max-width: 500px){
+  .price-subsection{display: none;}
 }

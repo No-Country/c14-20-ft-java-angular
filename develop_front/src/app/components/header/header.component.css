@@ -8,7 +8,7 @@ img{
   cursor: pointer;
 }
 #logo {
-  width: 200px;
+  min-width: 20vw;
   object-fit: contain;
 }
 .menu {
