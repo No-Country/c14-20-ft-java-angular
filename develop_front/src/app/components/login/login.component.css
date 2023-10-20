@@ -5,6 +5,19 @@
   padding: 1em;
 }
 
+.label-button{
+  color: #9dcca3; 
+  cursor: pointer;
+}
+.label-sesion{
+  background-color: #4e9b57; 
+  cursor: pointer; 
+  color: white; 
+  padding: 10px;
+  font-size: 2vh;
+  border-radius: 15px;
+}
+
 #formContentLog {
   min-width: 30vw;
   background: #fff;

@@ -2,10 +2,10 @@
   <img mat-card-image id="card-image" src="{{ product.image }}" alt="" />
 
   <mat-card-header>
-    <mat-card-title>{{ product.name }}</mat-card-title>
+    <mat-card-title class="title">{{ product.name }}</mat-card-title>
   </mat-card-header>
   <mat-card-content>
-    <p>{{ product.price | currency }}</p>
+    <p class="price">{{ product.price | currency }}</p>
   </mat-card-content>
 
   <button
@@ -23,16 +23,7 @@
     <div style="border: none">
       <button
         (click)="onDelete()"
-        class="minus"
-        style="
-          border: none;
-          background: none;
-          background-color: #9dcca3;
-          border-radius: 10px;
-          width: 34px;
-          height: 28px;
-          margin: 3px;
-        "
+        class="plus-minus"
       >
         <i class="bi bi-dash" style="color: white"></i>
       </button>
@@ -42,28 +33,10 @@
         name="quantity"
         value="{{ singleProductCount }}"
         type="number"
-        style="
-          align-items: center;
-          color: #656565;
-          font-size: 20px;
-          height: 38px;
-          width: 100px;
-          border: solid #9dcca3;
-          border-radius: 10px;
-        "
       />
       <button
         (click)="onAddToCart()"
-        class="plus"
-        style="
-          border: none;
-          background: none;
-          background-color: #9dcca3;
-          border-radius: 10px;
-          width: 34px;
-          height: 28px;
-          margin: 3px;
-        "
+        class="plus-minus"
       >
         <i class="bi bi-plus" style="color: white"></i>
       </button>

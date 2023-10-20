@@ -24,21 +24,37 @@
 .add-to-cart-button {
   margin: 0 auto;
   color: white;
-
+  text-transform: uppercase;
+  font-size: 2vh;
   background-color: var(--button);
   padding: 0;
   border: none;
   border-radius: 7px;
-  width: 100px;
+  width: 10vw;
   height: 38px;
   top: 625px;
   left: 1109px;
   border-radius: 10px;
+
+  @media only screen and (max-width: 500px) {
+    font-size: 1.8vh;
+    width: 80%;
+}
 }
 .add-to-cart-button:hover {
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   border: 1px solid white;
   cursor: pointer;
+}
+
+.price{
+  color: #4e9b57;
+  font-weight: bold;
+  font-size: 2vh
+}
+
+.title{
+  color:#656565 ;
 }
 
 @media (max-width: 500px) {
@@ -77,18 +93,25 @@ input[type="number"]::-webkit-outer-spin-button {
 .number-input * {
   box-sizing: border-box;
 }
-.number-input {
-  background-color: red;
-}
+
 .number-input button {
   outline: none;
-  -webkit-appearance: none;
-  background-color: transparent;
   border: none;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  position: relative;
+  position: relative;;
+  background: none;
+  background-color: #9dcca3;
+  border-radius: 10px;
+  width: 3.3vh;
+  height: 3vh;
+  margin: 3px;
+  
+  @media only screen and (max-width: 500px) {
+    width: 2.6vh;
+    height: 2.3vh;
+}
 }
 
 .number-input button:after {
@@ -107,4 +130,16 @@ input[type="number"]::-webkit-outer-spin-button {
   border-width: 0 2px;
   font-weight: bold;
   text-align: center;
+  align-items: center;
+  color: #656565;
+  font-size: 2vh;
+  height: 3vh;
+  width: 10vh;
+  border: solid #9dcca3;
+  border-radius: 10px;
+
+  
+  @media only screen and (max-width: 500px) {
+    width: 4.5vh;
+}
 }
