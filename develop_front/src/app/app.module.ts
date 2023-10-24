@@ -21,6 +21,7 @@ import { ShoppingCartSingleComponent } from './components/shopping-cart-single/s
 import { ProductInfoComponent } from './components/product-info/product-info.component';
 import { EnvioComponent } from './components/envio/envio.component';
 import { ConfirmationComponent } from './components/confirmation/confirmation.component';
+import { DashboardAdminComponent } from './components/dashboard-admin/dashboard-admin.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { ConfirmationComponent } from './components/confirmation/confirmation.co
     ProductInfoComponent,
     EnvioComponent,
     ConfirmationComponent,
+    DashboardAdminComponent,
   ],
   imports: [
     BrowserModule,
