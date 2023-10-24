@@ -3,6 +3,7 @@
   color: var(--primary-text);
   display: flex;
   justify-content: space-between;
+  height: 8vh;
 }
 img{
   cursor: pointer;

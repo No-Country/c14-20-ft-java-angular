@@ -8,6 +8,7 @@ import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.
 import { MyAccountComponent } from './components/my-account/my-account.component';
 import { ProductInfoComponent } from './components/product-info/product-info.component';
 import { EnvioComponent } from './components/envio/envio.component';
+import { ConfirmationComponent } from './components/confirmation/confirmation.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -21,6 +22,7 @@ const routes: Routes = [
       { path: 'my-account', component: MyAccountComponent },
       { path: 'product-info', component: ProductInfoComponent },
       { path: 'envio', component: EnvioComponent },
+      { path: 'confirmacion', component: ConfirmationComponent },
     ],
   },
   {
