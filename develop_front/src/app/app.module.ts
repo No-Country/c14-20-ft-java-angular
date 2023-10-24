@@ -22,6 +22,7 @@ import { ProductInfoComponent } from './components/product-info/product-info.com
 import { EnvioComponent } from './components/envio/envio.component';
 import { ConfirmationComponent } from './components/confirmation/confirmation.component';
 import { DashboardAdminComponent } from './components/dashboard-admin/dashboard-admin.component';
+import { CreateFoodComponent } from './components/create-food/create-food.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { DashboardAdminComponent } from './components/dashboard-admin/dashboard-
     EnvioComponent,
     ConfirmationComponent,
     DashboardAdminComponent,
+    CreateFoodComponent
   ],
   imports: [
     BrowserModule,

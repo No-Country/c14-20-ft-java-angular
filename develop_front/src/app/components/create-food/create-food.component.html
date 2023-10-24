@@ -1,5 +1,4 @@
-
-  <div class="container"> 
+<div class="container"> 
     <div class="table-body" >
         <div class="button">
             <label routerLink="/home/create-food"><p>Añadir productos <img src="\assets\img\🦆 icon _add circled outline_.png" alt=""></p></label>
@@ -7,30 +6,30 @@
         <table class="table">
             <thead >
               <tr class="thead">
-                <th class="titleImage" scope="col">Imagen</th>
+                <th class="title" scope="col">Imagen</th>
                 <th class="title" scope="col">Descripcion</th>
                 <th class="title" scope="col">Stock</th>
                 <th class="title" scope="col">Precio</th>
-                <th class="title" scope="col"></th>
+                <th class="title" scope="col">
+                  <img src="\assets\img\🦆 icon _trash_.png" alt="">
+                </th>
               </tr>
             </thead>
-            <tbody *ngFor="let product of arrayProducts">
+            <tbody >
               <tr>
                 <td class="content1">
-                    <img src="{{ product.image }}" alt="">
+                    <img src="\assets\img\🦆 icon _add circled1 outline_.png" alt="">
                 </td>
                 <td class="content2">
-                    <h3>{{ product.name }}</h3>
-                    <p>{{ product.description }}</p>
+                  <input type="number">
                 </td>
                 <td class="content3">
                     <input type="number">
                 </td>
                 <td class="content4">
-                   <p> {{ product.price | currency }}</p>
+                  <input type="number">
                 </td>
                 <td class="content5">
-                    <img src="\assets\img\🦆 icon _edit pencil_.png" alt="">
                     <img src="\assets\img\🦆 icon _trash_.png" alt="">
                 </td>
               </tr>

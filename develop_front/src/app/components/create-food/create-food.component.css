@@ -19,18 +19,12 @@ width: 12vw;
 background-color: #6ABD74;
 border-radius: 15px;
 cursor: pointer;
-@media only screen and (max-width: 500px) {
-    width: 60vw;
-}
 }
 
 label p{
     margin-top: 1vh;
     font-size: 2vh;
     color: white;
-    @media only screen and (max-width: 500px) {
-        margin-top: 0.2vh;
-    }
 }
 
 .table{
@@ -58,15 +52,6 @@ thead{
     font-weight: bold;
     color: #656565;
 }
-.titleImage{
-    background-color: #D9D9D9;
-    padding-bottom: 2vh;
-    font-weight: bold;
-    color: #656565;
-    @media only screen and (max-width: 500px) {
-        display: none;
-    }
-}
 
 td{
     height: 10vh;
@@ -74,37 +59,29 @@ td{
     font-size: 2vh;
 }
 
-.content1 img{
-    max-height: 9vh;
-}
-.content1 {
-    max-height: 9vh;
-    @media only screen and (max-width: 500px) {
-        display: none;
-    }
-}
-
-.content2 h3{
-    font-size: 2.5vh;
-    font-weight: bold;
-}
-.content2{
-    color: #656565;
-}
-
-.content3 input{
+.content2 input{
     height: 4vh;
     width: 8vw;
-    border-radius: 15px;
     border-color: #6ABD74;
     text-align: center;
     color: #656565;
 }
-.content4 p{
-    font-size: 2.5vh;
-    font-weight: bold;
+.content3 input{
+    height: 4vh;
+    width: 8vw;
+    border-color: #6ABD74;
+    text-align: center;
     color: #656565;
 }
+
+.content4 input{
+    height: 4vh;
+    width: 8vw;
+    border-color: #6ABD74;
+    text-align: center;
+    color: #656565;
+}
+
 
 .content5 img{
     height: 3vh;

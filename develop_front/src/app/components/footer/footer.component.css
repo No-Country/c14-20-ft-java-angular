@@ -24,7 +24,8 @@ section {
   text-align: right;
 }
 h1{
-  padding-left: 1vw;
+  padding-top: 1.5vh;
+  padding-left: 3vw;
   font-size: 3.5vh;
   color: white;
   font-weight: bold;
@@ -46,7 +47,7 @@ input::placeholder{
   width: 5vw;
 
   @media only screen and (max-width: 500px) {
-    min-width: 20vw;
+    min-width: 24vw;
     height: 4vh;
     border-radius: 20px;
 }

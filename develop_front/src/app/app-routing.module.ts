@@ -10,6 +10,7 @@ import { ProductInfoComponent } from './components/product-info/product-info.com
 import { EnvioComponent } from './components/envio/envio.component';
 import { ConfirmationComponent } from './components/confirmation/confirmation.component';
 import { DashboardAdminComponent } from './components/dashboard-admin/dashboard-admin.component';
+import { CreateFoodComponent } from './components/create-food/create-food.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -25,6 +26,7 @@ const routes: Routes = [
       { path: 'envio', component: EnvioComponent },
       { path: 'confirmacion', component: ConfirmationComponent },
       { path: 'admin-dashboard', component: DashboardAdminComponent },
+      { path: 'create-food', component: CreateFoodComponent },
     ],
   },
   {
