@@ -1,39 +1,60 @@
-<div class="container"> 
-    <div class="table-body" >
-        <div class="button">
-            <label routerLink="/home/create-food"><p>Añadir productos <img src="\assets\img\🦆 icon _add circled outline_.png" alt=""></p></label>
+<div class="background">
+<section class="vh-100">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+          <div class="card shadow-2-strong" style="border-radius: 2rem; border-color: #9dcca3;">
+            <div class="card-body p-5 text-center">
+               <h1>Añade un platillo</h1>
+              <form  novalidate #f="ngForm">
+                <div class="form-group">
+                  <label for="apellido"><p>Imagen del platillo</p></label>
+                  <input type="file" class="form-control" id="img" name="img"
+                  accept=".jpg, .jpeg, .png">
+              </div>
+              <br>
+              <div class="Imagen">
+                 <!-- para la vista previa del platillo <img [src]="imageService.url"max-width="200px">--> 
+              </div>
+              <br>
+                <div class="form-group">
+                    <label for="nombre"></label>
+                    <input type="text" class="form-control" id="nombre" name="nombre"
+                    placeholder="Nombre del platillo:"  required>
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="apellido"></label>
+                    <input type="text" class="form-control" id="Descripcion" name="Descripcion"  
+                    placeholder="Descripcion:" required>
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="descripcion"></label>
+                    <input type="text" class="form-control" id="Tipo" name="Tipo" 
+                    placeholder="Tipo de Platillo:" required>
+                </div>
+                <br>
+                <div class="form-group">
+                  <label for="descripcion"></label>
+                  <input type="text" class="form-control" id="Stock" name="Stock" 
+                  placeholder="Stock:" required>
+              </div>
+              <br>
+              <div class="form-group">
+                <label for="descripcion"></label>
+                <input type="number" class="form-control" id="Precio" name="Precio" 
+                placeholder="$ Precio:" required>
+            </div>
+            <br>
+                <label class="label-button" for="add" 
+                ><b><span><p><img src="\assets\img\🦆 icon _add circled outline_.png" alt=""> Añadir</p></span></b>
+              </label>
+            </form>
+            </div>
+          </div>
         </div>
-        <table class="table">
-            <thead >
-              <tr class="thead">
-                <th class="title" scope="col">Imagen</th>
-                <th class="title" scope="col">Descripcion</th>
-                <th class="title" scope="col">Stock</th>
-                <th class="title" scope="col">Precio</th>
-                <th class="title" scope="col">
-                  <img src="\assets\img\🦆 icon _trash_.png" alt="">
-                </th>
-              </tr>
-            </thead>
-            <tbody >
-              <tr>
-                <td class="content1">
-                    <img src="\assets\img\🦆 icon _add circled1 outline_.png" alt="">
-                </td>
-                <td class="content2">
-                  <input type="number">
-                </td>
-                <td class="content3">
-                    <input type="number">
-                </td>
-                <td class="content4">
-                  <input type="number">
-                </td>
-                <td class="content5">
-                    <img src="\assets\img\🦆 icon _trash_.png" alt="">
-                </td>
-              </tr>
-            </tbody>
-          </table>
+      </div>
     </div>
+  </section>
 </div>
