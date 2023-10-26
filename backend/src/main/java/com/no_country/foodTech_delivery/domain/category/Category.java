@@ -1,5 +1,6 @@
 package com.no_country.foodTech_delivery.domain.category;
 
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
