@@ -1,7 +1,6 @@
 package com.no_country.foodTech_delivery.domain.product;
 
 import com.no_country.foodTech_delivery.domain.category.Category;
-import com.no_country.foodTech_delivery.domain.category.CategoryRepository;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -15,7 +14,6 @@ import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 
 @Table(name = "products")
 @Entity(name = "Product")
@@ -50,6 +48,10 @@ public class Product {
         this.stock = 0L;
         this.image = productRecordData.image();
         this.enable = true;
+    }
+
+    public Product(Long product) {
+        this.id = product;
     }
 
     public void updateData(ProductUpdateData productUpdateData, Category category) {

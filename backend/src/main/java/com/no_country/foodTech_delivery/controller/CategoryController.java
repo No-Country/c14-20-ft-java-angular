@@ -12,9 +12,9 @@ import org.springframework.web.util.UriComponentsBuilder;
 
 import com.no_country.foodTech_delivery.domain.category.Category;
 import com.no_country.foodTech_delivery.domain.category.CategoryRecordData;
-import com.no_country.foodTech_delivery.domain.category.CategoryRepository;
 import com.no_country.foodTech_delivery.domain.category.CategoryResponseData;
 import com.no_country.foodTech_delivery.domain.category.CategoryUpdateData;
+import com.no_country.foodTech_delivery.repository.CategoryRepository;
 
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;

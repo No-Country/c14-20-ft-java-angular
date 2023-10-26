@@ -3,9 +3,6 @@ package com.no_country.foodTech_delivery.model.entity;
 import jakarta.persistence.*;
 import lombok.Data;
 
-import java.math.BigDecimal;
-import java.math.BigInteger;
-
 @Entity
 @Data
 @Table(name = "users")
