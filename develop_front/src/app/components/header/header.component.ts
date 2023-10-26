@@ -3,7 +3,7 @@ import { CartProduct } from 'src/app/interfaces/CartProduct.interface';
 import { User } from 'src/app/interfaces/User.interface';
 import { CredentialsService } from 'src/app/services/credentials.service';
 import { ShoppingCartService } from 'src/app/services/shopping-cart/shopping-cart.service';
-import { Router } from '@angular/router';
+import {  Router } from '@angular/router';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -15,7 +15,7 @@ export class HeaderComponent implements OnInit {
   constructor(
     private shoppingCartService: ShoppingCartService,
     private credentials: CredentialsService,
-    private router: Router
+    private router: Router,
   ) {}
   ngOnInit() {
     this.shoppingCartService.productsInCart.subscribe((data) => {
@@ -27,6 +27,7 @@ export class HeaderComponent implements OnInit {
       this.credentials.userData.subscribe((data) => (this.userData = data));
       console.log(this.userData);
     });
+
   }
 
   redirectTo(path: string) {

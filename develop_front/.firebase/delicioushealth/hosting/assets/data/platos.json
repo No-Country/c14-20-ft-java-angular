@@ -1,0 +1,222 @@
+[
+  {
+    "idProduct": 1,
+    "name": "Producto 1",
+    "description": "Descripción del Producto 1",
+    "createdAt": "2023-10-01T08:00:00Z",
+    "updatedAt": "2023-10-05T14:30:00Z",
+    "price": 19.99,
+    "stock": 50,
+    "image": "https://i.imgur.com/cZurIW1.jpg",
+    "enable": true
+  },
+  {
+    "idProduct": 2,
+    "name": "Producto 2",
+    "description": "Descripción del Producto 2",
+    "createdAt": "2023-10-02T09:15:00Z",
+    "updatedAt": "2023-10-04T16:45:00Z",
+    "price": 24.99,
+    "stock": 30,
+    "image": "https://i.imgur.com/6N5SIAI.jpg",
+    "enable": true
+  },
+  {
+    "idProduct": 3,
+    "name": "Producto 3",
+    "description": "Descripción del Producto 3",
+    "createdAt": "2023-10-03T10:30:00Z",
+    "updatedAt": "2023-10-03T10:45:00Z",
+    "price": 29.99,
+    "stock": 45,
+    "image": "https://i.imgur.com/57TesQb.jpg",
+    "enable": true
+  },
+  {
+    "idProduct": 4,
+    "name": "Producto 4",
+    "description": "Descripción del Producto 4",
+    "createdAt": "2023-10-04T11:45:00Z",
+    "updatedAt": "2023-10-02T13:15:00Z",
+    "price": 14.99,
+    "stock": 60,
+    "image": "https://i.imgur.com/NGITrW3.jpg",
+    "enable": true
+  },
+  {
+    "idProduct": 5,
+    "name": "Producto 5",
+    "description": "Descripción del Producto 5",
+    "createdAt": "2023-10-05T12:00:00Z",
+    "updatedAt": "2023-10-01T17:30:00Z",
+    "price": 34.99,
+    "stock": 25,
+    "image": "https://i.imgur.com/1BFcfGz.jpg",
+    "enable": true
+  },
+  {
+    "idProduct": 6,
+    "name": "Producto 6",
+    "description": "Descripción del Producto 6",
+    "createdAt": "2023-10-06T13:15:00Z",
+    "updatedAt": "2023-10-06T14:45:00Z",
+    "price": 19.99,
+    "stock": 55,
+    "image": "https://i.imgur.com/83PWjP8.jpg",
+    "enable": true
+  },
+  {
+    "idProduct": 7,
+    "name": "Producto 7",
+    "description": "Descripción del Producto 7",
+    "createdAt": "2023-10-07T14:30:00Z",
+    "updatedAt": "2023-10-07T16:15:00Z",
+    "price": 27.99,
+    "stock": 40,
+    "image": "https://i.imgur.com/q1PtYxU.jpg",
+    "enable": true
+  },
+  {
+    "idProduct": 8,
+    "name": "Producto 8",
+    "description": "Descripción del Producto 8",
+    "createdAt": "2023-10-08T15:45:00Z",
+    "updatedAt": "2023-10-08T18:00:00Z",
+    "price": 39.99,
+    "stock": 20,
+    "image": "https://i.imgur.com/zGEhFTv.jpg",
+    "enable": true
+  },
+  {
+    "idProduct": 9,
+    "name": "Producto 9",
+    "description": "Descripción del Producto 9",
+    "createdAt": "2023-10-09T16:00:00Z",
+    "updatedAt": "2023-10-09T17:45:00Z",
+    "price": 22.99,
+    "stock": 35,
+    "image": "https://i.imgur.com/xKMMlZS.jpg",
+    "enable": true
+  },
+  {
+    "idProduct": 10,
+    "name": "Producto 10",
+    "description": "Descripción del Producto 10",
+    "createdAt": "2023-10-10T17:15:00Z",
+    "updatedAt": "2023-10-10T19:30:00Z",
+    "price": 17.99,
+    "stock": 50,
+    "image": "https://i.imgur.com/62cWxxX.jpg",
+    "enable": true
+  },
+  {
+    "idProduct": 11,
+    "name": "Producto 11",
+    "description": "Descripción del Producto 11",
+    "createdAt": "2023-10-20T22:00:00Z",
+    "updatedAt": "2023-10-20T22:00:00Z",
+    "price": 19.99,
+    "stock": 50,
+    "image": "https://images.pexels.com/photos/341523/pexels-photo-341523.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "enable": true
+  },
+  {
+    "idProduct": 12,
+    "name": "Producto 12",
+    "description": "Descripción del Producto 12",
+    "createdAt": "2023-10-21T23:45:00Z",
+    "updatedAt": "2023-10-21T23:45:00Z",
+    "price": 24.95,
+    "stock": 35,
+    "image": "https://www.pexels.com/es-es/foto/panqueque-con-rodajas-de-fresa-376464/",
+    "enable": true
+  },
+  {
+    "idProduct": 13,
+    "name": "Producto 13",
+    "description": "Descripción del Producto 13",
+    "createdAt": "2023-10-22T08:30:00Z",
+    "updatedAt": "2023-10-22T08:30:00Z",
+    "price": 29.99,
+    "stock": 28,
+    "image": "https://images.pexels.com/photos/1616097/pexels-photo-1616097.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    "enable": true
+  },
+  {
+    "idProduct": 14,
+    "name": "Producto 14",
+    "description": "Descripción del Producto 14",
+    "createdAt": "2023-10-23T10:15:00Z",
+    "updatedAt": "2023-10-23T10:15:00Z",
+    "price": 14.99,
+    "stock": 42,
+    "image": "https://images.pexels.com/photos/4829069/pexels-photo-4829069.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    "enable": true
+  },
+  {
+    "idProduct": 15,
+    "name": "Producto 15",
+    "description": "Descripción del Producto 15",
+    "createdAt": "2023-10-24T12:00:00Z",
+    "updatedAt": "2023-10-24T12:00:00Z",
+    "price": 39.95,
+    "stock": 23,
+    "image": "https://images.pexels.com/photos/3685530/pexels-photo-3685530.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    "enable": true
+  },
+  {
+    "idProduct": 16,
+    "name": "Producto 16",
+    "description": "Descripción del Producto 16",
+    "createdAt": "2023-10-25T13:45:00Z",
+    "updatedAt": "2023-10-25T13:45:00Z",
+    "price": 19.99,
+    "stock": 50,
+    "image": "https://images.pexels.com/photos/3338681/pexels-photo-3338681.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    "enable": true
+  },
+  {
+    "idProduct": 17,
+    "name": "Producto 17",
+    "description": "Descripción del Producto 17",
+    "createdAt": "2023-10-26T15:30:00Z",
+    "updatedAt": "2023-10-26T15:30:00Z",
+    "price": 24.95,
+    "stock": 35,
+    "image": "https://images.pexels.com/photos/3056057/pexels-photo-3056057.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    "enable": true
+  },
+  {
+    "idProduct": 18,
+    "name": "Producto 18",
+    "description": "Descripción del Producto 18",
+    "createdAt": "2023-10-27T17:15:00Z",
+    "updatedAt": "2023-10-27T17:15:00Z",
+    "price": 29.99,
+    "stock": 28,
+    "image": "https://images.pexels.com/photos/5709271/pexels-photo-5709271.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    "enable": true
+  },
+  {
+    "idProduct": 19,
+    "name": "Producto 19",
+    "description": "Descripción del Producto 19",
+    "createdAt": "2023-10-28T19:00:00Z",
+    "updatedAt": "2023-10-28T19:00:00Z",
+    "price": 14.99,
+    "stock": 42,
+    "image": "https://images.pexels.com/photos/7129160/pexels-photo-7129160.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    "enable": true
+  },
+  {
+    "idProduct": 20,
+    "name": "Producto 20",
+    "description": "Descripción del Producto 20",
+    "createdAt": "2023-10-29T21:45:00Z",
+    "updatedAt": "2023-10-29T21:45:00Z",
+    "price": 39.95,
+    "stock": 23,
+    "image": "https://images.pexels.com/photos/2629277/pexels-photo-2629277.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    "enable": true
+  }
+]
