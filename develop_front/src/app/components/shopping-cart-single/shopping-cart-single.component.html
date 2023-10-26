@@ -1,20 +1,8 @@
-<mat-card class="mat-card" style="text-align: center; border: none">
-  <img mat-card-image id="card-image" src="{{ product.image }}" alt="" />
-
-  <mat-card-header>
-    <mat-card-title>{{ product.name }}</mat-card-title>
-  </mat-card-header>
-  <mat-card-content>
-    <p>{{ product.price | currency }}</p>
-  </mat-card-content>
-
-  <button
-    *ngIf="singleProductCount == 0"
-    class="add-to-cart-button"
-    (click)="onAddToCart()"
-  >
-    Agregar
-  </button>
+<div *ngIf="singleProductCount !== 0" class="single-cart-product">
+  <div class="img-title">
+    <img id="cart-img" src="{{ cartProduct.product.image }}" alt="" />
+    <h3 class="name">{{ cartProduct.product.name }}</h3>
+  </div>
   <div
     *ngIf="singleProductCount !== 0"
     class="number-input justify-content-center align-items-center"
@@ -40,6 +28,7 @@
         class="quantity"
         min="0"
         name="quantity"
+        (change)="updateQuantity()"
         value="{{ singleProductCount }}"
         type="number"
         style="
@@ -48,7 +37,6 @@
           font-size: 20px;
           height: 38px;
           width: 100px;
-
           border: solid #9dcca3;
           border-radius: 10px;
         "
@@ -70,4 +58,5 @@
       </button>
     </div>
   </div>
-</mat-card>
+  <h3 class="price">${{ subTotalPrice }}.00</h3>
+</div>

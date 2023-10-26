@@ -9,16 +9,55 @@
   <button class="menu" mat-icon-button>
     <mat-icon>menu</mat-icon>
   </button>
-  <img id="logo" src="../../../assets/img/logo-white.svg" alt="" />
+  <img
+    (click)="redirectTo('/home')"
+    id="logo"
+    src="../../../assets/img/logo-white.svg"
+    alt="home-logo"
+  />
   <!-- <span>Delicious Health</span> -->
 
   <!-- <span class="example-spacer"></span> -->
   <div class="nav-bar-container">
-    <button mat-icon-button class="shopping-cart">
+    <button
+      mat-icon-button
+      class="shopping-cart"
+      (click)="redirectTo('/home/shopping-cart')"
+    >
       <mat-icon [matBadge]="count" matBadgeColor="warn">shopping_cart</mat-icon>
     </button>
-    <button mat-icon-button class="user">
-      <mat-icon>person</mat-icon>
+
+    <button
+      mat-icon-button
+      class="example-icon favorite-icon"
+      aria-label="Example icon-button with heart icon"
+      data-toggle="modal"
+      data-target="#exampleModalCenter"
+    >
+      <!-- <span>Bruno OSuna</span> -->
+      <mat-icon>account_circle</mat-icon>
+    </button>
+    <h4 *ngIf="userData" class="user-p">
+      {{ userData.name }} {{ userData.lastName }}
+    </h4>
+    <button mat-icon-button *ngIf="userData">
+      <!-- <span>Bruno OSuna</span> -->
+      <mat-icon>logout</mat-icon>
     </button>
   </div>
 </mat-toolbar>
+
+<div
+  class="modal fade"
+  id="exampleModalCenter"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="exampleModalCenterTitle"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content" style="background: none; border: none">
+      <app-login></app-login>
+    </div>
+  </div>
+</div>

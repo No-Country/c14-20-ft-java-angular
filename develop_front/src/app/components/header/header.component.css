@@ -4,6 +4,9 @@
   display: flex;
   justify-content: space-between;
 }
+img{
+  cursor: pointer;
+}
 #logo {
   width: 200px;
   object-fit: contain;
@@ -11,6 +14,14 @@
 .menu {
   display: none;
 }
+.nav-bar-container {
+  width: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
 @media (max-width: 475px) {
   .user {
     display: none;
