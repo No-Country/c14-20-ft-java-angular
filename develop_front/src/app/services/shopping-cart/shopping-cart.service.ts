@@ -21,7 +21,7 @@ export class ShoppingCartService {
     if (foundIndex !== -1) {
       this.arrayProducts[foundIndex]['quantity'] += 1;
     } else {
-      let newProductInCart: CartProduct = { product, quantity: 1 };
+      let newProductInCart: CartProduct = { product, quantity: 1, price: 1 };
       this.arrayProducts.push(newProductInCart);
     }
     this.productsObs.next(this.arrayProducts);
@@ -49,4 +49,5 @@ export class ShoppingCartService {
   get productsInCart() {
     return this.productsObs.asObservable();
   }
+
 }

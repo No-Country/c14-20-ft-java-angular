@@ -1,5 +1,4 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { CartProduct } from 'src/app/interfaces/CartProduct.interface';
 import { ShoppingCartService } from 'src/app/services/shopping-cart/shopping-cart.service';
 
@@ -10,10 +9,11 @@ import { ShoppingCartService } from 'src/app/services/shopping-cart/shopping-car
 })
 export class ShoppingCartSingleComponent implements OnInit {
   singleProductCount: number = 0;
-  subTotalPrice: Number = 0;
+  subTotalPrice: number = 0;
+  subTotalList: number[] = [];
+  totalPrice : number = 0;
   @Input() cartProduct!: CartProduct;
   constructor(
-    private router: Router,
     private shoppingCartService: ShoppingCartService
   ) {}
   ngOnInit(): void {
@@ -25,6 +25,9 @@ export class ShoppingCartSingleComponent implements OnInit {
     );
     this.subTotalPrice =
       this.singleProductCount * this.cartProduct.product.price;
+
+      this.totalPrice += this.subTotalPrice;
+
   }
   onAddToCart() {
     this.shoppingCartService.addToCart(this.cartProduct.product);
@@ -47,4 +50,5 @@ export class ShoppingCartSingleComponent implements OnInit {
       this.singleProductCount * this.cartProduct.product.price;
     console.log(this.subTotalPrice);
   }
+
 }
