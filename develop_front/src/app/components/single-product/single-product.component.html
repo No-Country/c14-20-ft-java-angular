@@ -1,8 +1,14 @@
-<mat-card class="mat-card" style="text-align: center; ">
-  <img mat-card-image id="card-image" src="{{ product.image }}" alt="" />
+<mat-card class="mat-card" style="text-align: center; border: none">
+  <img
+    (click)="goToProduct()"
+    mat-card-image
+    id="card-image"
+    src="{{ product.image }}"
+    alt=""
+  />
 
   <mat-card-header>
-    <mat-card-title class="title">{{ product.name }}</mat-card-title>
+    <mat-card-title (click)="goToProduct()">{{ product.name }}</mat-card-title>
   </mat-card-header>
   <mat-card-content>
     <p class="price">{{ product.price | currency }}</p>

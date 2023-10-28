@@ -12,6 +12,8 @@ export class ShoppingCartService {
   productsObs: BehaviorSubject<CartProduct[]> = new BehaviorSubject<
     CartProduct[]
   >(this.arrayProducts);
+  total: number = 0;
+  totalObs: BehaviorSubject<number> = new BehaviorSubject<number>(0);
   constructor() {}
 
   addToCart(product: Product) {
