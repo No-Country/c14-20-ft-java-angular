@@ -1,0 +1,146 @@
+<!--Modal content-->
+<div class="section over-hide">
+    <div class="container">
+      <div class="row full-height justify-content-center">
+        <div class="col-12 text-center align-self-center py-5">
+          <div class="section text-center py-5 py-md-0">
+            <input class="login" type="checkbox" id="login" name="login" />
+            <input class="register" type="checkbox" id="register" name="register" />
+            <input class="rTOl" type="checkbox" id="rTOl" name="rTOl" />
+            <div class="card-3d-wrap mx-auto">
+              <div class="card-3d-wrapper-1">
+                <div class="card-front">
+                  <div id="formContentHome">
+                    <h2><b>ADMIN Log In</b></h2>
+                    <br />
+                    <label class="label-sesion" for="login" (click)="openLogin()"
+                        ><b>Iniciar Sesion</b>
+                      </label>
+                    <div id="formFooter">
+                      <p>¿No estas registrado?</p>
+                      <label class="label-button" for="register" 
+                        ><b>REGISTRATE</b>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-log">
+                  <div id="formContentLog">
+                    <h1 ><b>Inicio como ADMIN</b></h1>
+                    <br />
+                    <p class="error-p">{{authError}}</p>
+                    <br>
+                    <!-- Login Form -->
+                    <form class="form-group" #adminLogin="ngForm" (ngSubmit)="login(adminLogin.value)">
+                      <div class="col-10">
+                        <input
+                          type="email"
+                          id="login"
+                          class="form-control"
+                          name="login"
+                          placeholder="Correo Electronico"
+                          formControlName="email"
+                          ngModel
+                          required
+                        />
+                        <input
+                          type="password"
+                          id="password"
+                          class="form-control"
+                          name="login"
+                          formControlName="password"
+                          placeholder="Contraseña"
+                          ngModel
+                          required
+                        />
+                      </div>
+                      <br>
+                      <button class="buttonI" ><b>Ingresar</b></button>
+                    </form>
+                    <div id="formFooter">
+                      <p>¿No estas registrado?</p>
+                      <label class="label-button" for="register" (click)="openSignUp()"
+                        ><b><span>REGISTRATE</span></b>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-reg">
+                  <div id="formContentSign">
+                    <h1><b>Registro de ADMIN</b></h1>
+                    <br />
+                    <div class="row-g3">
+                      <!-- Register Form -->
+                      <form class="form-group" #adminSignUp="ngForm" (ngSubmit)="signUp(adminSignUp.value)" >
+                        <div class="col-10">
+                          <input
+                            type="text"
+                            id="name"
+                            class="form-control"
+                            name="name"
+                            placeholder="Nombre"
+                            formControlName="name"
+                            ngModel
+                            required
+                          />
+                          <input
+                            type="text"
+                            id="password"
+                            class="form-control"
+                            name="password"
+                            placeholder="Apellido"
+                            formControlName="lastName"
+                            ngModel
+                            required
+                          />
+                          <input
+                            type="email"
+                            id="login"
+                            class="form-control"
+                            name="login"
+                            placeholder="Correo Electronico"
+                            formControlName="email"
+                            ngModel
+                            required
+                          />
+                          <input
+                            type="password"
+                            id="password"
+                            class="form-control"
+                            name="login"
+                            placeholder="Contraseña"
+                            formControlName="password"
+                            ngModel
+                            required
+                          />
+                        </div>
+                        <br>
+                        <button class="buttonCC" >
+                          <b>Crear Cuenta</b>
+                        </button>
+                      </form>
+                    </div>
+                    <div id="formFooter-1">
+                      <p>¿Estas registrado?</p>
+                      <label class="label-button" for="rTOl" (click)="openLogin()" 
+                        ><b>Inicio de Sesion</b>
+                      </label>
+                    </div>
+                    <div id="formFooter-2">
+                      <p>¿No estas registrado?</p>
+                      <label class="label-button" for="register" (click)="openLogin()"
+                        ><b><span>Inicio de Sesion</span></b>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  <!--modal mobile-->
+  

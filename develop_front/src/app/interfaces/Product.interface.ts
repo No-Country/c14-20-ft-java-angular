@@ -1,5 +1,5 @@
 export interface Product {
-  idProduct: number;
+  id: number;
   name: string;
   description: string;
   createdAt: string;
@@ -7,5 +7,10 @@ export interface Product {
   price: number;
   stock: number;
   image: string;
+  type:string;
   enable: boolean;
+  quantity: undefined | number,
+  productId: undefined| number
 }
+
+

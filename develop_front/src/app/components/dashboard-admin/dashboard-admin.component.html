@@ -14,24 +14,24 @@
                 <th class="title" scope="col"></th>
               </tr>
             </thead>
-            <tbody *ngFor="let product of arrayProducts">
+            <tbody *ngFor="let item of productList">
               <tr>
                 <td class="content1">
-                    <img src="{{ product.image }}" alt="">
+                    <img src="{{ item.image }}" alt="">
                 </td>
                 <td class="content2">
-                    <h3>{{ product.name }}</h3>
-                    <p>{{ product.description }}</p>
+                    <h3>{{ item.name }}</h3>
+                    <p>{{ item.description }}</p>
                 </td>
                 <td class="content3">
                     <input type="number">
                 </td>
                 <td class="content4">
-                   <p> {{ product.price | currency }}</p>
+                   <p> {{ item.price | currency }}</p>
                 </td>
                 <td class="content5">
-                    <img src="\assets\img\🦆 icon _edit pencil_.png" alt="">
-                    <img src="\assets\img\🦆 icon _trash_.png" alt="">
+                    <img routerLink="/seller-update-product/{{item.id}}" src="\assets\img\🦆 icon _edit pencil_.png" alt="">
+                    <img (click)="deleteProduct(item.id)" src="\assets\img\🦆 icon _trash_.png" alt="">
                 </td>
               </tr>
             </tbody>

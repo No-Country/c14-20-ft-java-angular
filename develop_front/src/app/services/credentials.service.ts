@@ -1,22 +1,46 @@
-import { Injectable } from '@angular/core';
-import { User } from '../interfaces/User.interface';
+import { EventEmitter, Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
+import { User, login } from '../interfaces/User.interface';
 
 @Injectable({
   providedIn: 'root',
 })
 export class CredentialsService {
-  private user!: User;
-  private userObs: BehaviorSubject<User> = new BehaviorSubject<User>(this.user);
-  constructor() {}
+  isAdminLoggedIn= new BehaviorSubject<boolean>(false);
+  isLoginError= new EventEmitter<boolean>(false)
 
-  registerUser(newUser: User) {
-    this.user = newUser;
-    console.log(this.user);
-    this.userObs.next(this.user);
+  constructor(private http:HttpClient, private router:Router) { }
+  userSignUp(data:User){
+    this.http.post('http://localhost:3000/admin',
+    data,
+    {observe:'response'}).subscribe((result)=>{
+      console.warn(result)
+      if(result){
+        localStorage.setItem('admin',JSON.stringify(result.body))
+        this.router.navigate(['home/dashboard-admin'])
+      }
+    })
+  } 
+  reloadSeller(){
+    if(localStorage.getItem('admin')){
+      this.isAdminLoggedIn.next(true)
+      this.router.navigate(['home/dashboard-admin'])
+    }
   }
-  get userData() {
-    return this.userObs.asObservable();
+  userLogin(data:login){
+   this.http.get(`http://localhost:3000/admin?email=${data.email}&password=${data.password}`,
+   {observe:'response'}).subscribe((result:any)=>{
+    console.warn(result)
+    if(result && result.body && result.body.length===1){
+      this.isLoginError.emit(false)
+      localStorage.setItem('admin',JSON.stringify(result.body))
+      this.router.navigate(['home/dashboard-admin'])
+    }else{
+      console.warn("login failed");
+      this.isLoginError.emit(true)
+    }
+   })
   }
-  LogOut() {}
 }

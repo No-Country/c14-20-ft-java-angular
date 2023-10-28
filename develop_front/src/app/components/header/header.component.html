@@ -1,62 +1,75 @@
 <mat-toolbar>
-  <!-- <button
-    mat-icon-button
-    class="example-icon"
-    aria-label="Example icon-button with menu icon"
-  >
-    <mat-icon>menu</mat-icon>
-  </button> -->
   <button class="menu" mat-icon-button>
     <mat-icon>menu</mat-icon>
   </button>
   <img
-    (click)="redirectTo('/home')"
+    routerLink="/home"
     id="logo"
     src="../../../assets/img/logo-white.svg"
     alt="home-logo"
   />
-  <!-- <span>Delicious Health</span> -->
-
-  <!-- <span class="example-spacer"></span> -->
   <div class="nav-bar-container">
-    <!-- 
-    <button
-    mat-icon-button
-      >
-      <img src="\assets\img\🦆 icon _bell_.png" alt="">
-    </button>-->
-    <button
-      mat-icon-button
-      class="shopping-cart"
-      (click)="redirectTo('/home/shopping-cart')"
-    >
-    
-      <mat-icon [matBadge]="count" matBadgeColor="warn"><img src="\assets\img\🦆 icon _cart_.png" alt=""></mat-icon>
-    </button>
-
-    <button
-      mat-icon-button
-      class="example-icon favorite-icon"
-      aria-label="Example icon-button with heart icon"
-      data-toggle="modal"
-      data-target="#exampleModalCenter"
-    >
-      <!-- <span>Bruno OSuna</span> -->
-      <img src="\assets\img\🦆 icon _profile circled_.png" alt="">
-    </button>
-    <h4 *ngIf="userData" class="user-p">
-      {{ userData.name }} {{ userData.lastName }}
-    </h4>
-    <button mat-icon-button *ngIf="userData">
-      <!-- <span>Bruno OSuna</span> -->
-      <mat-icon>logout</mat-icon>
-    </button>
+    <div [ngSwitch]="menuType">
+      <ul *ngSwitchCase="'default'" >
+       <button
+          mat-icon-button
+          class="example-icon favorite-icon"
+          aria-label="Example icon-button with heart icon"
+          data-toggle="modal"
+          data-target="#admin"
+        >
+          <img src="\assets\img\🦆 icon _profile circled_.png" alt="">
+        </button>
+       <button
+          mat-icon-button
+          class="example-icon favorite-icon"
+          aria-label="Example icon-button with heart icon"
+          data-toggle="modal"
+          data-target="#user"
+        >
+          <img src="\assets\img\🦆 icon _profile circled_.png" alt="">
+        </button>
+       <button
+          mat-icon-button
+          class="shopping-cart"
+          routerLink="/home/shopping-cart"
+          >
+          <mat-icon  matBadgeColor="warn"><img src="\assets\img\🦆 icon _cart_.png" alt="">({{cartItems}})</mat-icon>
+        </button>
+      </ul>
+      <ul *ngSwitchCase="'user'" >
+       <a> <h4 class="user-p">
+          {{userName | titlecase}} {{userLastName | titlecase}}
+        </h4></a>
+       <button
+          mat-icon-button
+          class="shopping-cart"
+          routerLink="/home/shopping-cart"
+          >
+          <mat-icon  matBadgeColor="warn"><img src="\assets\img\🦆 icon _cart_.png" alt="">({{cartItems}})</mat-icon>
+        </button>
+       <a (click)="userLogout()" >Logout</a>
+       <a [routerLink]="cartItems>0?'cart-page':null">Cart({{cartItems}})</a>
+      </ul>
+      <ul *ngSwitchCase="'admin'" >
+       <a routerLink="/home/food-create">Add Product</a>
+       <button mat-icon-button>
+            <img src="\assets\img\🦆 icon _bell_.png" alt="">
+          </button>
+       <a (click)="logout()">Logout</a>
+       <a href="#"> <h4 class="user-p">
+          {{adminName | titlecase}}{{adminLastName | titlecase}}
+        </h4></a>
+      </ul>
+     </div>
   </div>
 </mat-toolbar>
-<!--Modal-Content-->
+
+
+<!--Modal-Content user-->
 <div
   class="modal fade"
-  id="exampleModalCenter"
+  id="user"
   tabindex="-1"
   role="dialog"
   aria-labelledby="exampleModalCenterTitle"
@@ -65,6 +78,22 @@
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content" style="background: none; border: none">
       <app-login></app-login>
+    </div>
+  </div>
+</div>
+
+<!--Modal-Content admin-->
+<div
+  class="modal fade"
+  id="admin"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="exampleModalCenterTitle"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content" style="background: none; border: none">
+      <app-admin-login></app-admin-login>
     </div>
   </div>
 </div>

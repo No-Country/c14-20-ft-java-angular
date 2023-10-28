@@ -6,45 +6,42 @@
           <div class="card shadow-2-strong" style="border-radius: 2rem; border-color: #9dcca3;">
             <div class="card-body p-5 text-center">
                <h1>Añade un platillo</h1>
-              <form  novalidate #f="ngForm">
+               <p class="message-p">{{addProductMessage}}</p>
+              <form  novalidate #f="ngForm"  #addProduct="ngForm" (ngSubmit)="submit(addProduct.value)">
                 <div class="form-group">
-                  <label for="apellido"><p>Imagen del platillo</p></label>
-                  <input type="file" class="form-control" id="img" name="img"
-                  accept=".jpg, .jpeg, .png">
-              </div>
-              <br>
-              <div class="Imagen">
-                 <!-- para la vista previa del platillo <img [src]="imageService.url"max-width="200px">--> 
+                  <label for="apellido"></label>
+                  <input type="text" class="form-input" id="img" name="img"
+                  placeholder="URL de la Imagen" ngModel>
               </div>
               <br>
                 <div class="form-group">
                     <label for="nombre"></label>
-                    <input type="text" class="form-control" id="nombre" name="nombre"
-                    placeholder="Nombre del platillo:"  required>
+                    <input type="text" class="form-input" id="nombre" name="nombre"
+                    placeholder="Nombre del platillo:" ngModel  required>
                 </div>
                 <br>
                 <div class="form-group">
                     <label for="apellido"></label>
-                    <input type="text" class="form-control" id="Descripcion" name="Descripcion"  
-                    placeholder="Descripcion:" required>
+                    <input type="text" class="form-input" id="Descripcion" name="Descripcion"  
+                    placeholder="Descripcion:" ngModel required>
                 </div>
                 <br>
                 <div class="form-group">
                     <label for="descripcion"></label>
-                    <input type="text" class="form-control" id="Tipo" name="Tipo" 
-                    placeholder="Tipo de Platillo:" required>
+                    <input type="text" class="form-input" id="Tipo" name="Tipo" 
+                    placeholder="Tipo de Platillo:" ngModel required>
                 </div>
                 <br>
                 <div class="form-group">
                   <label for="descripcion"></label>
-                  <input type="text" class="form-control" id="Stock" name="Stock" 
-                  placeholder="Stock:" required>
+                  <input type="text" class="form-input" id="Stock" name="Stock" 
+                  placeholder="Stock:" ngModel required>
               </div>
               <br>
               <div class="form-group">
                 <label for="descripcion"></label>
-                <input type="number" class="form-control" id="Precio" name="Precio" 
-                placeholder="$ Precio:" required>
+                <input type="number" class="form-input" id="Precio" name="Precio" 
+                placeholder="$ Precio:" ngModel required>
             </div>
             <br>
                 <label class="label-button" for="add" 

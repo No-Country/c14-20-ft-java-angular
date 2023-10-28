@@ -1,26 +1,26 @@
 <section id="hero" class="hero d-flex align-items-center section-bg">
   <div class="container">
-    <div class="row justify-content-between gy-5">
+    <div class="row justify-content-between gy-5" *ngIf="productData">
       <div class="col-lg-5 order-2 order-lg-1 d-flex flex-column 
       justify-content-center align-items-center align-items-lg-start text-center text-lg-start">
-        <img class="product" src="https://via.placeholder.com/420x420">
+        <img class="product" src="{{productData.image}}">
       </div>
       <div class="col-lg-5 order-1 order-lg-2 d-flex flex-column 
       justify-content-center align-items-center align-items-lg-start text-center text-lg-start">
-        <h1 class="title">name</h1><br>
-          <p class="description">description</p><br>
+        <h1 class="title">{{productData.name}}</h1><br>
+          <p class="description">{{productData.description}}</p><br>
           <div class="noresponsive">
-            <h1 class="price">price</h1><br>
+            <h1 class="price">{{productData.price}}</h1><br>
           <button class="add-cart"
             >AGREGAR
             </button> <br>
             <div class="number-input">
               <div class="number-input-box">
-                <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()"
+                <button (click)="handleQuantity('min')"
                   ><i class="bi bi-dash" style="color: white;"></i>
                 </button>
-              <input class="quantity" min="0" name="quantity" value="1" type="number">
-              <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" 
+              <input class="quantity" min="0" name="quantity" value="{{productQuantity}}" type="number">
+              <button (click)="handleQuantity('plus')" 
                 ><i class="bi bi-plus" style="color: white;"></i>
               </button>
               </div>
@@ -28,23 +28,23 @@
             </div>
           <br>
           <p style="color:#9dcca3; font-size: 36px;">
-            <i class="bi bi-clock" style="color:#4e9b57; width: 36px;"></i>Tiempo estimado</p>
+            <i class="bi bi-clock" style="color:#4e9b57; width: 36px;"></i>Tiempo estimado: 30Min</p>
           </div>
       </div>
       <div class="responsive order-3">
         <div class=" d-flex flex-column justify-content-center 
         align-items-center align-items-lg-start text-center text-lg-start">
-          <h1 class="price"><b>price</b></h1><br>
+          <h1 class="price"><b>{{productData.price}}</b></h1><br>
           <button class="add-cart"
             >AGREGAR
             </button><br>
             <div class="number-input" >
               <div class="number-input-box">
-                <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" 
+                <button (click)="handleQuantity('min')" 
                   ><i class="bi bi-dash" style="color: white;"></i>
                 </button>
-              <input class="quantity" min="0" name="quantity" value="1" type="number">
-              <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"
+              <input class="quantity" min="0" name="quantity" value="{{productQuantity}}" type="number">
+              <button (click)="handleQuantity('plus')" class="plus"
               ><i class="bi bi-plus" style="color: white;"></i>
               </button>
               </div>
@@ -52,7 +52,7 @@
             </div>
           <br>
           <p style="color:#9dcca3; font-size: 36px;">
-            <i class="bi bi-clock" style="color:#4e9b57; width: 36px;"></i>Tiempo estimado</p>
+            <i class="bi bi-clock" style="color:#4e9b57; width: 36px;"></i>Tiempo estimado: 30Min</p>
         </div>
       </div>
     </div>

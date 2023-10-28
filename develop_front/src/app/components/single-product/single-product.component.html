@@ -1,5 +1,5 @@
 <mat-card class="mat-card" style="text-align: center; ">
-  <img mat-card-image id="card-image" src="{{ product.image }}" alt="" />
+  <img mat-card-image id="card-image" routerLink="product-info/{{product.id}}" src="{{ product.image }}" alt="" />
 
   <mat-card-header>
     <mat-card-title class="title">{{ product.name }}</mat-card-title>
@@ -22,7 +22,7 @@
   >
     <div style="border: none">
       <button
-        (click)="onDelete()"
+        (click)="handleQuantity('min')"
         class="plus-minus"
       >
         <i class="bi bi-dash" style="color: white"></i>
@@ -35,7 +35,7 @@
         type="number"
       />
       <button
-        (click)="onAddToCart()"
+      (click)="handleQuantity('plus')"
         class="plus-minus"
       >
         <i class="bi bi-plus" style="color: white"></i>

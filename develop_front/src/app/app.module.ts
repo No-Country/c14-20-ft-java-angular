@@ -23,6 +23,8 @@ import { EnvioComponent } from './components/envio/envio.component';
 import { ConfirmationComponent } from './components/confirmation/confirmation.component';
 import { DashboardAdminComponent } from './components/dashboard-admin/dashboard-admin.component';
 import { CreateFoodComponent } from './components/create-food/create-food.component';
+import { AdminLoginComponent } from './components/admin-login/admin-login.component';
+import { UpdateFoodComponent } from './components/update-food/update-food.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +44,9 @@ import { CreateFoodComponent } from './components/create-food/create-food.compon
     EnvioComponent,
     ConfirmationComponent,
     DashboardAdminComponent,
-    CreateFoodComponent
+    CreateFoodComponent,
+    AdminLoginComponent,
+    UpdateFoodComponent
   ],
   imports: [
     BrowserModule,

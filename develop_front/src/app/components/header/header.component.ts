@@ -1,36 +1,62 @@
 import { Component, OnInit } from '@angular/core';
-import { CartProduct } from 'src/app/interfaces/CartProduct.interface';
-import { User } from 'src/app/interfaces/User.interface';
-import { CredentialsService } from 'src/app/services/credentials.service';
-import { ShoppingCartService } from 'src/app/services/shopping-cart/shopping-cart.service';
 import {  Router } from '@angular/router';
+import { ProductService } from 'src/app/services/product/product.service';
+import { Product } from 'src/app/interfaces/Product.interface';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent implements OnInit {
-  userData!: User;
-  count: number = 0; //si se trae los datos del back aca la cantidad  deberia iniciarlizarse con los datos de lback, no en 0
-  constructor(
-    private shoppingCartService: ShoppingCartService,
-    private credentials: CredentialsService,
-    private router: Router,
-  ) {}
-  ngOnInit() {
-    this.shoppingCartService.productsInCart.subscribe((data) => {
-      this.count = data.reduce((acc: number, e: CartProduct) => {
-        acc += e.quantity;
-        return acc;
-      }, 0);
-      console.log(this.count);
-      this.credentials.userData.subscribe((data) => (this.userData = data));
-      console.log(this.userData);
+  menuType: string = 'default';
+  adminName:string="";
+  adminLastName:string="";
+  userName:string="";
+  userLastName:string="";
+  searchResult:undefined|Product[];
+  cartItems=0;
+  constructor(private route: Router, private product:ProductService) {}
+
+  ngOnInit(): void {
+    this.route.events.subscribe((val: any) => {
+      if (val.url) {
+        if (localStorage.getItem('admin') && val.url.includes('admin')) {
+         let adminStore=localStorage.getItem('admin');
+         let adminData =adminStore && JSON.parse(adminStore)[0];
+         this.adminName=adminData.name;
+         this.adminLastName=adminData.lastName;
+          this.menuType = 'admin';
+        }
+        else if(localStorage.getItem('user')){
+          let userStore = localStorage.getItem('user');
+          let userData = userStore && JSON.parse(userStore);
+          this.userName= userData.name;
+          this.userLastName=userData.lastName;
+          this.menuType='user';
+          this.product.getCartList(userData.id);
+        }
+         else {
+          this.menuType = 'default';
+        }
+      }
     });
-
+    let cartData= localStorage.getItem('localCart');
+    if(cartData){
+      this.cartItems= JSON.parse(cartData).length
+    }
+    this.product.cartData.subscribe((items)=>{
+      this.cartItems= items.length
+    })
+  }
+  logout(){
+    localStorage.removeItem('admin');
+    this.route.navigate([''])
   }
 
-  redirectTo(path: string) {
-    this.router.navigate([path]);
+  userLogout(){
+    localStorage.removeItem('user');
+    this.route.navigate([''])
+    this.product.cartData.emit([])
   }
+
 }

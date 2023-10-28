@@ -8,13 +8,37 @@
         <h3>Cantidad</h3>
         <h3>Precio</h3>
       </div>
-      <div class="cart-single">
-        <app-shopping-cart-single 
-        *ngFor="let cartProduct of cartProducts"
-        [cartProduct]="cartProduct"
-      ></app-shopping-cart-single>
+      <div class="cart-single" *ngFor="let cartData of cartData">
+        <div  class="single-cart-product" >
+          <div class="img-title" >
+            <img id="cart-img" src="{{ cartData.image }}" alt="" />
+            <h3 class="name">{{ cartData.name }}</h3>
+          </div>
+          <div 
+            class="number-input justify-content-center align-items-center">
+            <div class="number-input-box">
+              <button
+              (click)="handleQuantity('min')">
+                <i class="bi bi-dash" style="color: white"></i>
+              </button>
+              <input
+                class="quantity"
+                min="0"
+                name="quantity"
+                
+                value="{{cartData.quantity}}"
+                type="number"
+              />
+              <button
+              (click)="handleQuantity('plus')">
+                <i class="bi bi-plus" style="color: white"></i>
+              </button>
+            </div>
+          </div>
+          <h3 class="price">${{cartData.price}}</h3>
+        </div>
       </div>
-      </div>
+    </div>
       <div class="price col-lg-5 order-2 order-lg-2 d-flex flex-column">
       <div class="price-subsection">
         <h3 class="price-title">Resumen del pedido</h3>
@@ -23,7 +47,8 @@
         <h3 class="price-title">Subtotal:<span class="money">$13000</span></h3>
       </div>
       <div class="price-subsection-total">
-        <h3 class="price-title"><b>TOTAL:</b><span class="money"><b>${{ totalSum }}</b></span></h3>
+        <h3 class="price-title"
+        ><b>TOTAL:</b><span class="money"><b>$ {{ priceSummary.total }}</b></span></h3>
       </div>
       <button class="pay" routerLink="/home/envio">CONTINUAR</button>
       </div>

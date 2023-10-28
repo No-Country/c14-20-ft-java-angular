@@ -1,22 +1,22 @@
-<div *ngIf="singleProductCount !== 0" class="single-cart-product">
-  <div class="img-title">
-    <img id="cart-img" src="{{ cartProduct.product.image }}" alt="" />
-    <h3 class="name">{{ cartProduct.product.name }}</h3>
+<div *ngFor="let cart of cartData" class="single-cart-product" >
+  <div class="img-title" >
+    <img id="cart-img" src="{{ cart.image }}" alt="" />
+    <h3 class="name">{{ cart.name }}</h3>
   </div>
   <div 
     *ngIf="singleProductCount !== 0"
     class="number-input justify-content-center align-items-center">
     <div class="number-input-box">
       <button
-        (click)="onDelete()">
+      (click)="handleQuantity('min')">
         <i class="bi bi-dash" style="color: white"></i>
       </button>
       <input
         class="quantity"
         min="0"
         name="quantity"
-        (change)="updateQuantity()"
-        value="{{ singleProductCount }}"
+        (click)="handleQuantity('plus')"
+        value="{{cart.quantity}}"
         type="number"
       />
       <button
@@ -25,6 +25,6 @@
       </button>
     </div>
   </div>
-  <h3 class="price">${{ totalPrice }}</h3>
+  <h3 class="price">${{cart.price}}</h3>
 </div>
 

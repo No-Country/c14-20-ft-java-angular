@@ -1,0 +1,58 @@
+<div class="background">
+    <section class="vh-100">
+        <div class="container py-5 h-100">
+          <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+              <div class="card shadow-2-strong" style="border-radius: 2rem; border-color: #9dcca3;">
+                <div class="card-body p-5 text-center">
+                   <h1>Actualiza un platillo</h1>
+                   <p class="message-p">{{productMessage}}</p>
+                  <form  novalidate #f="ngForm" #addProduct="ngForm"
+                  (ngSubmit)="submit(addProduct.value)">
+                    <div class="form-group">
+                      <label for="apellido"></label>
+                      <input type="text" class="form-input" id="img" name="img"
+                      placeholder="URL de la Imagen" ngModel="{{productData?.image}}">
+                  </div>
+                  <br>
+                    <div class="form-group">
+                        <label for="nombre"></label>
+                        <input type="text" class="form-input" id="nombre" name="nombre"
+                        placeholder="Nombre del platillo:" ngModel="{{productData?.name}}"  required>
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <label for="descripcion"></label>
+                        <input type="text" class="form-input" id="Descripcion" name="Descripcion"  
+                        placeholder="Descripcion:" ngModel="{{productData?.description}}" required>
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <label for="descripcion"></label>
+                        <input type="text" class="form-input" id="Tipo" name="Tipo" 
+                        placeholder="Tipo de Platillo:" ngModel="{{productData?.type}}" required>
+                    </div>
+                    <br>
+                    <div class="form-group">
+                      <label for="descripcion"></label>
+                      <input type="text" class="form-input" id="Stock" name="Stock" 
+                      placeholder="Stock:" ngModel="{{productData?.stock}}" required>
+                  </div>
+                  <br>
+                  <div class="form-group">
+                    <label for="descripcion"></label>
+                    <input type="number" class="form-input" id="Precio" name="Precio" 
+                    placeholder="$ Precio:" ngModel="{{productData?.price}}" required>
+                </div>
+                <br>
+                    <label class="label-button" for="add" 
+                    ><b><span><p><img src="\assets\img\🦆 icon _add circled outline_.png" alt="">Actualizar</p></span></b>
+                  </label>
+                </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>

@@ -21,4 +21,150 @@
     gap: 20px;
   }
 }
+
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css");
+
+.mat-card {
+  margin: 20px;
+  width: 200px;
+  min-width: 100px;
+  height: 270px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+#card-image {
+  width: auto;
+  height: 120px;
+  object-fit: contain;
+}
+.mat-mdc-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.add-to-cart-button {
+  margin: 0 auto;
+  color: white;
+  text-transform: uppercase;
+  font-size: 2vh;
+  background-color: var(--button);
+  padding: 0;
+  border: none;
+  border-radius: 7px;
+  width: 10vw;
+  height: 38px;
+  top: 625px;
+  left: 1109px;
+  border-radius: 10px;
+
+  @media only screen and (max-width: 500px) {
+    font-size: 1.8vh;
+    width: 80%;
+}
+}
+.add-to-cart-button:hover {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border: 1px solid white;
+  cursor: pointer;
+}
+
+.price{
+  color: #4e9b57;
+  font-weight: bold;
+  font-size: 2vh
+}
+
+.title{
+  color:#656565 ;
+}
+
+@media (max-width: 500px) {
+  .mat-card {
+    width: 125px;
+    height: 210px;
+    margin: 0 auto;
+  }
+  .mat-mdc-card-header {
+    padding: 0;
+  }
+  #card-image {
+    height: 90px;
+  }
+}
+
+/* buttons plus minus*/
+
+input[type="number"] {
+  -webkit-appearance: textfield;
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
+.number-input {
+  border: 2px solid #ddd;
+  display: inline-flex;
+}
+
+.number-input,
+.number-input * {
+  box-sizing: border-box;
+}
+
+.number-input button {
+  outline: none;
+  border: none;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;;
+  background: none;
+  background-color: #9dcca3;
+  border-radius: 10px;
+  width: 3.3vh;
+  height: 3vh;
+  margin: 3px;
+  
+  @media only screen and (max-width: 500px) {
+    width: 2.6vh;
+    height: 2.3vh;
+}
+}
+
+.number-input button:after {
+  display: inline-block;
+  position: absolute;
+  transform: translate(-50%, -50%) rotate(180deg);
+}
+.number-input button.plus:after {
+  transform: translate(-50%, -50%) rotate(0deg);
+}
+
+.number-input input[type="number"] {
+  font-family: sans-serif;
+  padding: 0.5rem;
+  border: solid #ddd;
+  border-width: 0 2px;
+  font-weight: bold;
+  text-align: center;
+  align-items: center;
+  color: #656565;
+  font-size: 2vh;
+  height: 3vh;
+  width: 10vh;
+  border: solid #9dcca3;
+  border-radius: 10px;
+
+  
+  @media only screen and (max-width: 500px) {
+    width: 4.5vh;
+}
+}
  

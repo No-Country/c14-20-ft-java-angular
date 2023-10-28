@@ -1,0 +1,110 @@
+{
+  "products": [
+    {
+      "name": "Ensalada Quinua",
+      "description": "Quinua con salmon, rabano, palta y arbejas",
+      "createdAt": "2023-10-01T08:00:00Z",
+      "updatedAt": "2023-10-05T14:30:00Z",
+      "price": 5,
+      "stock": 50,
+      "image": "https://i.imgur.com/cZurIW1.jpg",
+      "enable": true,
+      "id": 1
+    },
+    {
+      "name": "Ensalada de lentejas",
+      "description": "Lentejas con lechuga, pepino, quinua, palta y pan",
+      "createdAt": "2023-10-02T09:15:00Z",
+      "updatedAt": "2023-10-04T16:45:00Z",
+      "price": 8,
+      "stock": 30,
+      "image": "https://i.imgur.com/6N5SIAI.jpg",
+      "enable": true,
+      "id": 2
+    },
+    {
+      "name": "Vegetales crudos",
+      "description": "Zanahoria, arbejas, tomates secos y arroz",
+      "createdAt": "2023-10-03T10:30:00Z",
+      "updatedAt": "2023-10-03T10:45:00Z",
+      "price": 3,
+      "stock": 45,
+      "image": "https://i.imgur.com/57TesQb.jpg",
+      "enable": true,
+      "id": 3
+    },
+    {
+      "name": "Granola",
+      "description": "Granola, frutos rojos y yogurt",
+      "createdAt": "2023-10-04T11:45:00Z",
+      "updatedAt": "2023-10-02T13:15:00Z",
+      "price": 3.5,
+      "stock": 60,
+      "image": "https://i.imgur.com/NGITrW3.jpg",
+      "enable": true,
+      "id": 4
+    },
+    {
+      "name": "Camarones y fideos",
+      "description": "Ensalada de camarones con rabano, fideos, garbanzos y palta",
+      "createdAt": "2023-10-05T12:00:00Z",
+      "updatedAt": "2023-10-01T17:30:00Z",
+      "price": 4,
+      "stock": 25,
+      "image": "https://i.imgur.com/1BFcfGz.jpg",
+      "enable": true,
+      "id": 5
+    },
+    {
+      "name": "Zanahoria pepino",
+      "description": "Ensalada de zanahoria con pepino, perejil, repollo, y carne",
+      "createdAt": "2023-10-06T13:15:00Z",
+      "updatedAt": "2023-10-06T14:45:00Z",
+      "price": 5,
+      "stock": 55,
+      "image": "https://i.imgur.com/83PWjP8.jpg",
+      "enable": true,
+      "id": 6
+    },
+    {
+      "name": "Salmón fit",
+      "description": "Ensalada de salmón con lechuga",
+      "createdAt": "2023-10-07T14:30:00Z",
+      "updatedAt": "2023-10-07T16:15:00Z",
+      "price": 4,
+      "stock": 40,
+      "image": "https://i.imgur.com/q1PtYxU.jpg",
+      "enable": true,
+      "id": 7
+    }
+  ],
+  "admin": [
+    {
+      "name": "Lucas",
+      "lastName": "Fair",
+      "email": "LucasFair@gmail.com",
+      "password": "Lucas20",
+      "role": "ADMIN",
+      "id": 1
+    },
+    {
+      "name": "Roxana",
+      "lastName": "Viloria",
+      "email": "Roxanaviloria@gmail.com",
+      "password": "Roxana20",
+      "role": "ADMIN",
+      "id": 2
+    },
+    {
+      "name": "Jaime",
+      "lastName": "Diaz",
+      "email": "Jaimediaz@gmail.com",
+      "password": "Jaime20",
+      "role": "ADMIN",
+      "id": 3
+    }
+  ],
+  "user": [],
+  "cart": [],
+  "orders": []
+}

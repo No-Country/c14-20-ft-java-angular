@@ -1,6 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { CartProduct } from 'src/app/interfaces/CartProduct.interface';
-import { ShoppingCartService } from 'src/app/services/shopping-cart/shopping-cart.service';
+import { Router } from '@angular/router';
+import { cart, priceSummary } from 'src/app/interfaces/CartProduct.interface';
+import { Product } from 'src/app/interfaces/Product.interface';
+import { ProductService } from 'src/app/services/product/product.service';
 
 @Component({
   selector: 'app-shopping-cart-single',
@@ -8,47 +10,78 @@ import { ShoppingCartService } from 'src/app/services/shopping-cart/shopping-car
   styleUrls: ['./shopping-cart-single.component.css'],
 })
 export class ShoppingCartSingleComponent implements OnInit {
+  @Input() product!: Product;
   singleProductCount: number = 0;
-  subTotalPrice: number = 0;
-  subTotalList: number[] = [];
-  totalPrice : number = 0;
-  @Input() cartProduct!: CartProduct;
-  constructor(
-    private shoppingCartService: ShoppingCartService
-  ) {}
+  productData:undefined | Product;
+  productQuantity:number=1;
+  removeCart=false;
+  cartData: cart[] | undefined;
+  priceSummary: priceSummary = {
+    price: 0,
+    discount: 0,
+    tax: 0,
+    delivery: 0,
+    total: 0
+  }
+  constructor(private productService: ProductService, private router: Router) {}
   ngOnInit(): void {
-    this.shoppingCartService.productsInCart.subscribe((data) =>
-      console.log(data)
-    );
-    this.singleProductCount = this.shoppingCartService.getSingleProductCount(
-      this.cartProduct.product
-    );
-    this.subTotalPrice =
-      this.singleProductCount * this.cartProduct.product.price;
-
-      this.totalPrice += this.subTotalPrice;
-
+    this.loadDetails()
   }
   onAddToCart() {
-    this.shoppingCartService.addToCart(this.cartProduct.product);
-    this.singleProductCount = this.shoppingCartService.getSingleProductCount(
-      this.cartProduct.product
-    );
-    console.log(this.singleProductCount);
-    this.updateQuantity();
+    if(this.productData){
+      this.productData.quantity = this.productQuantity;
+      if(!localStorage.getItem('user')){
+        this.productService.localAddToCart(this.productData);
+        this.removeCart=true
+      }else{
+        let user = localStorage.getItem('user');
+        let userId= user && JSON.parse(user).id;
+        let cartData:cart={
+          ...this.productData,
+          productId:this.productData.id,
+          userId
+        }
+        delete cartData.id;
+        this.productService.addToCart(cartData).subscribe((result)=>{
+          if(result){
+           this.productService.getCartList(userId);
+           this.removeCart=true
+          }
+        })        
+      }
+      
+    } 
   }
-  onDelete() {
-    this.shoppingCartService.deleteFromCart(this.cartProduct.product);
-    this.singleProductCount = this.shoppingCartService.getSingleProductCount(
-      this.cartProduct.product
-    );
-    console.log(this.singleProductCount);
-    this.updateQuantity();
+
+  loadDetails(){
+    this.productService.currentCart().subscribe((result) => {
+      this.cartData = result;
+      console.warn(this.cartData);
+      let price = 0;
+      result.forEach((item) => {
+        if (item.quantity) {
+          price = price + (+item.price * +item.quantity)
+        }
+      })
+      this.priceSummary.price = price;
+      this.priceSummary.discount = price / 10;
+      this.priceSummary.tax = price / 10;
+      this.priceSummary.delivery = 100;
+      this.priceSummary.total = price + (price / 10) + 100 - (price / 10);
+
+    if(!this.cartData.length){
+      this.router.navigate(['/'])
+    }
+
+    })
   }
-  updateQuantity() {
-    this.subTotalPrice =
-      this.singleProductCount * this.cartProduct.product.price;
-    console.log(this.subTotalPrice);
+
+  handleQuantity(val:string){
+    if(this.productQuantity<20 && val==='plus'){
+      this.productQuantity+=1;
+    }else if(this.productQuantity>1 && val==='min'){
+      this.productQuantity-=1;
+    }
   }
 
 }

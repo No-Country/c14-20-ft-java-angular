@@ -1,5 +1,4 @@
 <div class="products-container">
-
 <!-- 
   <div class="row d-flex flex-column position-relative">
     <div class="col-sm-12">
@@ -31,11 +30,52 @@
     src="../../../assets/img/home-banner2.png"
     alt="home-banner"
   /> -->
-  <div class="grid">
-    <app-single-product
-      *ngFor="let product of arrayProducts"
-      [product]="product"
-    >
-    </app-single-product>
+  <div class="grid" >
+    <mat-card class="mat-card" style="text-align: center; " *ngFor="let product of allProducts">
+      <img mat-card-image id="card-image" routerLink="product-info/{{product.id}}" src="{{ product.image }}" alt="" />
+    
+      <mat-card-header>
+        <mat-card-title class="title">{{ product.name }}</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <p class="price">{{ product.price | currency }}</p>
+      </mat-card-content>
+    
+      <button
+        *ngIf="singleProductCount == 0"
+        class="add-to-cart-button"
+        (click)="onAddToCart()"
+        onclick="singleProductCount++"
+      >
+        Agregar
+      </button>
+      <div
+        *ngIf="singleProductCount !== 0"
+        class="number-input justify-content-center align-items-center"
+        style="border: none"
+      >
+        <div style="border: none">
+          <button
+            (click)="handleQuantity('min')"
+            class="plus-minus"
+          >
+            <i class="bi bi-dash" style="color: white"></i>
+          </button>
+          <input
+            class="quantity"
+            min="0"
+            name="quantity"
+            value="{{ singleProductCount }}"
+            type="number"
+          />
+          <button
+          (click)="handleQuantity('plus')"
+            class="plus-minus"
+          >
+            <i class="bi bi-plus" style="color: white"></i>
+          </button>
+        </div>
+      </div>
+    </mat-card>
   </div>
 </div>
