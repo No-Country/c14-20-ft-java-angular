@@ -1,5 +1,5 @@
 <div class="shooping-cart-container">
-  <h1 style="margin: 40px; font-size: 45px;"><b>Mi Carrito</b></h1>
+  <h1 style="margin: 40px; font-size: 45px"><b>Mi Carrito</b></h1>
   <div class="table-price-container">
     <div class="table">
       <div class="table-titles">
@@ -8,23 +8,30 @@
         <h3>Precio</h3>
       </div>
       <div class="cart-single">
-        <app-shopping-cart-single 
-        *ngFor="let cartProduct of cartProducts"
-        [cartProduct]="cartProduct"
-      ></app-shopping-cart-single>
+        <app-shopping-cart-single
+          *ngFor="let cartProduct of cartProducts"
+          [cartProduct]="cartProduct"
+        ></app-shopping-cart-single>
       </div>
     </div>
-    <div class="price" >
+    <div class="price">
       <div class="price-subsection">
         <h3 class="price-title">Resumen del pedido</h3>
       </div>
       <div class="price-subsection">
-        <h3 class="price-title">Subtotal:<span class="money">$13000</span></h3>
+        <h3 class="price-title">
+          Subtotal:<span class="money">{{ totalPrice | currency }}</span>
+        </h3>
       </div>
       <div class="price-subsection">
-        <h3 class="price-title"><b>TOTAL:</b><span class="money"><b>$13000</b></span></h3>
+        <h3 class="price-title">
+          <b>TOTAL:</b
+          ><span class="money"
+            ><b>{{ totalPrice | currency }}</b></span
+          >
+        </h3>
       </div>
-      <button class="pay">CONTINUAR</button>
+      <button class="pay" (click)="redirectTo()">CONTINUAR</button>
     </div>
   </div>
 </div>
