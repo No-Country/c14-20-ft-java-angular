@@ -17,6 +17,7 @@ import jakarta.persistence.Table;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
+import java.util.HashSet;
 import java.util.Set;
 import java.util.stream.Collectors;
 import lombok.AllArgsConstructor;
@@ -52,10 +53,11 @@ public class UserEntity {
     @JoinTable(name = "user_roles", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
     private Set<RoleEntity> roles;
 
-    public UserEntity(UserRecordData userRecordData, String password) {
+    public UserEntity(UserRecordData userRecordData, String password, RoleEntity role) {
         this.name = userRecordData.name();
         this.email = userRecordData.email();
         this.password = password;
-        this.roles = userRecordData.roles().stream().map(role -> RoleEntity.builder().name(ERole.valueOf(role)).build()).collect(Collectors.toSet());
+        this.roles = new HashSet<>();
+        this.roles.add(role);
     }
 }
