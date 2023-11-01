@@ -29,7 +29,7 @@
                   <h1><b>Iniciar Sesion</b></h1>
                   <br />
                   <!-- Login Form -->
-                  <form class="form-group" [formGroup]="loginForm">
+                  <form class="form-group" #f="ngForm" (ngSubmit)="onLogin()" novalidate>
                     <div class="col-10">
                       <input
                         type="email"
@@ -38,6 +38,7 @@
                         name="login"
                         placeholder="Correo Electronico"
                         formControlName="email"
+                        [(ngModel)]="email"
                         required
                       />
                       <input
@@ -47,11 +48,12 @@
                         name="login"
                         formControlName="password"
                         placeholder="Contraseña"
+                        [(ngModel)]="password"
                         required
                       />
+                      <button class="buttonI" ><b>Ingresar</b></button>
                     </div>
                   </form>
-                  <button class="buttonI" ><b>Ingresar</b></button>
                   <div id="formFooter">
                     <p>¿No estas registrado?</p>
                     <label class="label-button" for="register"
@@ -66,7 +68,7 @@
                   <br />
                   <div class="row-g3">
                     <!-- Register Form -->
-                    <form class="form-group" [formGroup]="registerForm">
+                    <form class="form-group" #f="ngForm" (ngSubmit)="onSingUp()" novalidate>
                       <div class="col-10">
                         <input
                           type="text"
@@ -75,6 +77,7 @@
                           name="name"
                           placeholder="Nombre"
                           formControlName="name"
+                          [(ngModel)]="name"
                           required
                         />
                         <input
@@ -93,6 +96,7 @@
                           name="login"
                           placeholder="Correo Electronico"
                           formControlName="email"
+                          [(ngModel)]="email"
                           required
                         />
                         <input
@@ -102,14 +106,15 @@
                           name="login"
                           placeholder="Contraseña"
                           formControlName="password"
+                          [(ngModel)]="password"
                           required
-                        />
+                        /> 
+                  <button class="buttonCC" >
+                    <b>Crear Cuenta</b>
+                  </button>
                       </div>
                     </form>
                   </div>
-                  <button class="buttonCC" (click)="onSubmit()">
-                    <b>Crear Cuenta</b>
-                  </button>
                   <div id="formFooter-1">
                     <p>¿Estas registrado?</p>
                     <label class="label-button" for="rTOl" 

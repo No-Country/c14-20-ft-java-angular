@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { Product } from 'src/app/interfaces/Product.interface';
+import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { ProductService } from 'src/app/services/product/product.service';
+import { Product } from 'src/app/mock/interfaces/Product.interface';
+import { ProductService } from 'src/app/mock/service/product.service';
+import { ShoppingCartService } from 'src/app/services/shopping-cart/shopping-cart.service';
 
 @Component({
   selector: 'app-product-info',
@@ -9,26 +10,43 @@ import { ProductService } from 'src/app/services/product/product.service';
   styleUrls: ['./product-info.component.css'],
 })
 export class ProductInfoComponent implements OnInit {
-  purchaseId: any;
-  product: Product | undefined;
+  product: Product = null!;
+  @Input() producto!: Product;
+  singleProductCount: number = 0;
 
   constructor(
     private route: ActivatedRoute,
-    private productService: ProductService
+    private prodS: ProductService,
+    private shoppingCartService: ShoppingCartService
   ) {}
 
   ngOnInit(): void {
-    this.route.paramMap.subscribe((params) => {
-      // Obtén el parámetro 'idProduct' de la URL y conviértelo a un número
-      this.purchaseId = Number(params.get('idProduct'));
+    const id = this.route.snapshot.params['id'];
+    this.prodS.detail(id).subscribe(
+      data =>{
+        this.product = data;
+  })
 
-      // Busca el producto por su ID en el servicio ProductService
-      this.productService.products.subscribe((data) => {
-        this.product = data.find(
-          (e: Product) => e.idProduct === this.purchaseId
-        );
-        console.log(this.product);
-      });
-    });
+  this.shoppingCartService.productsInCart.subscribe((data) =>
+      console.log(data)
+    );
+    this.singleProductCount = this.shoppingCartService.getSingleProductCount(
+      this.product
+    );
+}
+
+  onAddToCart() {
+    this.shoppingCartService.addToCart(this.product);
+    this.singleProductCount = this.shoppingCartService.getSingleProductCount(
+      this.product
+    );
+    console.log(this.singleProductCount);
+  }
+  onDelete() {
+    this.shoppingCartService.deleteFromCart(this.product);
+    this.singleProductCount = this.shoppingCartService.getSingleProductCount(
+      this.product
+    );
+    console.log(this.singleProductCount);
   }
 }

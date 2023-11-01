@@ -14,7 +14,7 @@
                 <th class="title" scope="col"></th>
               </tr>
             </thead>
-            <tbody *ngFor="let product of arrayProducts">
+            <tbody *ngFor="let product of producto">
               <tr>
                 <td class="content1">
                     <img src="{{ product.image }}" alt="">
@@ -24,14 +24,14 @@
                     <p>{{ product.description }}</p>
                 </td>
                 <td class="content3">
-                    <input type="number">
+                    <p>{{ product.stock}}</p>
                 </td>
                 <td class="content4">
-                   <p> {{ product.price | currency }}</p>
+                   <p> {{ product.price}}</p>
                 </td>
                 <td class="content5">
-                    <img src="\assets\img\🦆 icon _edit pencil_.png" alt="">
-                    <img src="\assets\img\🦆 icon _trash_.png" alt="">
+                    <img src="\assets\img\🦆 icon _edit pencil_.png" alt="" routerLink="/update-food/{{product.idProduct}}">
+                    <img src="\assets\img\🦆 icon _trash_.png" alt="" (click)="delete(product.idProduct)">
                 </td>
               </tr>
             </tbody>

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Product } from 'src/app/interfaces/Product.interface';
-import { ProductService } from 'src/app/services/product/product.service';
+import { Product } from 'src/app/mock/interfaces/Product.interface';
+import { ProductService } from 'src/app/mock/service/product.service';
+import { TokenService } from 'src/app/mock/service/token.service';
 
 @Component({
   selector: 'app-products',
@@ -9,11 +10,30 @@ import { ProductService } from 'src/app/services/product/product.service';
 })
 export class ProductsComponent implements OnInit {
   arrayProducts: Product[] = [];
-  constructor(private productService: ProductService) {}
+
+  constructor(private prodS: ProductService, 
+    private tokenService: TokenService) { }
+  isLogged = false;
+
   ngOnInit(): void {
-    this.productService.products.subscribe((data) => {
+    this.cargarProducto();
+    if(this.tokenService.getToken()){
+      this.isLogged = true;
+    } else {
+      this.isLogged = false;
+    }
+
+    this.prodS.products.subscribe((data) => {
       this.arrayProducts = data;
       console.log(this.arrayProducts);
     });
+  }
+
+  cargarProducto(): void{
+    this.prodS.lista().subscribe(
+      data =>{
+        this.arrayProducts = data;
+      }
+    )
   }
 }

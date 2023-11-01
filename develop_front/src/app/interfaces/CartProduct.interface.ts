@@ -1,4 +1,5 @@
-import { Product } from './Product.interface';
+import { Product } from "../mock/interfaces/Product.interface";
+
 
 export interface CartProduct {
   product: Product;
