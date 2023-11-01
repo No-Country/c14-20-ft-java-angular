@@ -4,19 +4,19 @@
       <div
         class="col-lg-5 order-2 order-lg-1 d-flex flex-column justify-content-center align-items-center align-items-lg-start text-center text-lg-start"
       >
-        <img class="product" src="https://i.imgur.com/cZurIW1.jpg" />
+        <img class="product" src="{{product.image}}" />
       </div>
       <div
         class="col-lg-5 order-1 order-lg-2 d-flex flex-column justify-content-center align-items-center align-items-lg-start text-center text-lg-start"
       >
-        <h1 style="color: #656565; font-size: 40px"><b>Ensalada Quinua</b></h1>
+        <h1 style="color: #656565; font-size: 40px"><b>{{product.name}}</b></h1>
         <br />
         <p style="color: #656565; font-size: 32px; line-height: 30px">
-          Quinua con salmon, rabano, palta y arbejas
+          {{product.description}}
         </p>
         <br />
         <div class="noresponsive">
-          <h1 style="color: #4e9b57; font-size: 36px"><b>$5.00</b></h1>
+          <h1 style="color: #4e9b57; font-size: 36px"><b>${{product.price}}</b></h1>
           <br />
           <button
             style="
@@ -31,6 +31,7 @@
               text-align: center;
               border: none;
             "
+            (click)="onAddToCart()"
           >
             AGREGAR
           </button>
@@ -43,7 +44,7 @@
               style="border: solid #9dcca3; width: 213px; border-radius: 10px"
             >
               <button
-                onclick="this.parentNode.querySelector('input[type=number]').stepDown()"
+              (click)="onDelete()"
                 class="minus"
                 style="
                   border: none;
@@ -61,7 +62,7 @@
                 class="quantity"
                 min="0"
                 name="quantity"
-                value="1"
+                value="{{ singleProductCount }}"
                 type="number"
                 style="
                   align-items: center;
@@ -72,7 +73,7 @@
                 "
               />
               <button
-                onclick="this.parentNode.querySelector('input[type=number]').stepUp()"
+              (click)="onAddToCart()"
                 class="plus"
                 style="
                   border: none;
@@ -91,7 +92,7 @@
           <br />
           <p style="color: #9dcca3; font-size: 36px">
             <i class="bi bi-clock" style="color: #4e9b57; width: 36px"></i
-            >Tiempo estimado
+            >Tiempo estimado: 30Min.
           </p>
         </div>
       </div>
@@ -114,6 +115,7 @@
               text-align: center;
               border: none;
             "
+            (click)="onAddToCart()"
           >
             AGREGAR</button
           ><br />
@@ -125,7 +127,7 @@
               style="border: solid #9dcca3; width: 213px; border-radius: 10px"
             >
               <button
-                onclick="this.parentNode.querySelector('input[type=number]').stepDown()"
+              (click)="onDelete()"
                 class="minus"
                 style="
                   border: none;
@@ -143,7 +145,7 @@
                 class="quantity"
                 min="0"
                 name="quantity"
-                value="1"
+                value="{{ singleProductCount }}"
                 type="number"
                 style="
                   align-items: center;
@@ -154,7 +156,7 @@
                 "
               />
               <button
-                onclick="this.parentNode.querySelector('input[type=number]').stepUp()"
+              (click)="onAddToCart()"
                 class="plus"
                 style="
                   border: none;
@@ -173,7 +175,7 @@
           <br />
           <p style="color: #9dcca3; font-size: 36px">
             <i class="bi bi-clock" style="color: #4e9b57; width: 36px"></i
-            >Tiempo estimado
+            >Tiempo estimado: 30Min.
           </p>
         </div>
       </div>
