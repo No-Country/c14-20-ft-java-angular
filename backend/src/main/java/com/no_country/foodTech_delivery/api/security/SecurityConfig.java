@@ -48,6 +48,7 @@ public class SecurityConfig {
                 .authorizeHttpRequests(auth -> {
                     auth.requestMatchers(HttpMethod.POST, "/login").permitAll();
                     auth.requestMatchers(HttpMethod.POST, "/api/users").permitAll();
+                    auth.requestMatchers(HttpMethod.GET, "api/products").permitAll();
                     auth.anyRequest().authenticated();
                 })
                 .sessionManagement(sess -> sess.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
