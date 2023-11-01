@@ -24,6 +24,7 @@ import { ConfirmationComponent } from './components/confirmation/confirmation.co
 import { DashboardAdminComponent } from './components/dashboard-admin/dashboard-admin.component';
 import { CreateFoodComponent } from './components/create-food/create-food.component';
 import { UpdateFoodComponent } from './components/create-food/update-food.component';
+import { EnviosComponent } from './components/envios/envios.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { UpdateFoodComponent } from './components/create-food/update-food.compon
     ConfirmationComponent,
     DashboardAdminComponent,
     CreateFoodComponent,
-    UpdateFoodComponent
+    UpdateFoodComponent,
+    EnviosComponent
   ],
   imports: [
     BrowserModule,
