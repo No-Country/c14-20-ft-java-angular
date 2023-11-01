@@ -4,6 +4,7 @@
  */
 package com.no_country.foodTech_delivery.api.security;
 
+import com.no_country.foodTech_delivery.api.repositories.UserRepository;
 import com.no_country.foodTech_delivery.api.security.jwt.JwtAuthenticationFilter;
 import com.no_country.foodTech_delivery.api.security.jwt.JwtAuthorizationFilter;
 import com.no_country.foodTech_delivery.api.security.jwt.JwtUtils;
@@ -37,10 +38,13 @@ public class SecurityConfig {
     @Autowired
     private JwtAuthorizationFilter authorizationFilter;
     
+    @Autowired
+    private UserRepository userRepository;
+    
     @Bean
     SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity, AuthenticationManager authenticationManager) throws Exception{
         
-        JwtAuthenticationFilter jwtAuthenticationFilter = new JwtAuthenticationFilter(jwtUtils);
+        JwtAuthenticationFilter jwtAuthenticationFilter = new JwtAuthenticationFilter(jwtUtils, userRepository);
         jwtAuthenticationFilter.setAuthenticationManager(authenticationManager);
         jwtAuthenticationFilter.setFilterProcessesUrl("/login");
         return httpSecurity
