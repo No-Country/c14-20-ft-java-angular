@@ -18,6 +18,6 @@ export class UserService {
   }
 
   public login(loginUser: LoginUser):Observable<Jwt>{
-    return this.httpClient.post<Jwt>(environment.URL+ 'login/', loginUser)
+    return this.httpClient.post<Jwt>(environment.URL + '/login', loginUser)
   }
 }

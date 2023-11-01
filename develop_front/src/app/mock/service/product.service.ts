@@ -8,20 +8,18 @@ import { Product } from '../interfaces/Product.interface';
   providedIn: 'root'
 })
 export class ProductService {
-  arrayProducts: Product[] = [];
-  arrayObs: BehaviorSubject<Product[]> = new BehaviorSubject<Product[]>([]);
 
   URL = environment.URL + '/api/products'
 
 
   constructor(private httpClient : HttpClient) { }
 
-  public lista(): Observable<Product[]>{
+  public list(): Observable<Product[]>{
     return this.httpClient.get<Product[]>(this.URL);
   }
 
   public detail(id: number): Observable<Product>{
-    return this.httpClient.get<Product>(this.URL + `${id}`);
+    return this.httpClient.get<Product>(this.URL + `/${id}`);
   }
 
   public save(product: Product): Observable<any>{
@@ -29,15 +27,12 @@ export class ProductService {
   }
 
   public update(id: number, product: Product): Observable<any>{
-    return this.httpClient.put<any>(this.URL + `${id}`, product);
+    return this.httpClient.put<any>(this.URL + `/${id}`, product);
   }
 
   public delete(id: number): Observable<any>{
-    return this.httpClient.delete<any>(this.URL + `${id}`);
+    return this.httpClient.delete<any>(this.URL + `/${id}`);
   }
 
-  get products() {
-    return this.httpClient.get<Product[]>(this.URL);
-  }
 
 }
