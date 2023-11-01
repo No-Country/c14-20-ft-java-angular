@@ -1,7 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Product } from 'src/app/interfaces/Product.interface';
 import { ShoppingCartService } from 'src/app/services/shopping-cart/shopping-cart.service';
-import { Router } from '@angular/router';
+import { Product } from 'src/app/mock/interfaces/Product.interface';
 @Component({
   selector: 'app-single-product',
   templateUrl: './single-product.component.html',
@@ -11,8 +10,7 @@ export class SingleProductComponent implements OnInit {
   @Input() product!: Product;
   singleProductCount: number = 0;
   constructor(
-    private shoppingCartService: ShoppingCartService,
-    private router: Router
+    private shoppingCartService: ShoppingCartService
   ) {}
   ngOnInit(): void {
     this.shoppingCartService.productsInCart.subscribe((data) =>
@@ -35,8 +33,5 @@ export class SingleProductComponent implements OnInit {
       this.product
     );
     console.log(this.singleProductCount);
-  }
-  goToProduct() {
-    this.router.navigate(['home/product-info']);
   }
 }

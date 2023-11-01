@@ -10,6 +10,7 @@ import { EnvioComponent } from './components/envio/envio.component';
 import { ConfirmationComponent } from './components/confirmation/confirmation.component';
 import { DashboardAdminComponent } from './components/dashboard-admin/dashboard-admin.component';
 import { CreateFoodComponent } from './components/create-food/create-food.component';
+import { UpdateFoodComponent } from './components/create-food/update-food.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -20,11 +21,12 @@ const routes: Routes = [
       { path: '', component: ProductsComponent },
       { path: 'shopping-cart', component: ShoppingCartComponent },
       { path: 'my-account', component: MyAccountComponent },
-      { path: 'product-info', component: ProductInfoComponent },
+      { path: 'product-info/:idProduct', component: ProductInfoComponent },
       { path: 'envio', component: EnvioComponent },
       { path: 'confirmacion', component: ConfirmationComponent },
       { path: 'admin-dashboard', component: DashboardAdminComponent },
       { path: 'create-food', component: CreateFoodComponent },
+      { path: 'update-food/:idProduct', component: UpdateFoodComponent },
     ],
   },
   {

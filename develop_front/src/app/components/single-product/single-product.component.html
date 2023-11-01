@@ -1,6 +1,6 @@
 <mat-card class="mat-card" style="text-align: center; border: none">
-  <img
-    (click)="goToProduct()"
+  <img routerLink="/product-info/{{product.idProduct}}"
+    
     mat-card-image
     id="card-image"
     src="{{ product.image }}"
@@ -8,7 +8,7 @@
   />
 
   <mat-card-header>
-    <mat-card-title (click)="goToProduct()">{{ product.name }}</mat-card-title>
+    <mat-card-title routerLink="/product-info/{{product.idProduct}}">{{ product.name }}</mat-card-title>
   </mat-card-header>
   <mat-card-content>
     <p class="price">{{ product.price | currency }}</p>
