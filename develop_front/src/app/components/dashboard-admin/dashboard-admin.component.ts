@@ -26,7 +26,7 @@ export class DashboardAdminComponent implements OnInit {
   }
 
   cargarEducacion(): void{
-    this.prodS.lista().subscribe(
+    this.prodS.list().subscribe(
       data =>{
         this.producto = data;
       }

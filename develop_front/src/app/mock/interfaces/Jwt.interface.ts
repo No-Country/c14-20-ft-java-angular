@@ -1,6 +1,6 @@
 export class Jwt {
     token!: string;
     type!: string;
-    userName!: string;
+    email!: string;
     authorities!: string[];
 }

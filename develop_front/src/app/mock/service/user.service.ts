@@ -10,14 +10,15 @@ import { Jwt } from '../interfaces/Jwt.interface';
   providedIn: 'root'
 })
 export class UserService {
-  authURL = environment.URL + '/api/users'
+  authURL = environment.URL + 'api/users'
   constructor(private httpClient: HttpClient) { }
 
   public new(newUser: NewUser): Observable<any>{
     return this.httpClient.post<any>(this.authURL , newUser);
   }
 
+
   public login(loginUser: LoginUser):Observable<Jwt>{
-    return this.httpClient.post<Jwt>(environment.URL+ 'login/', loginUser)
+    return this.httpClient.post<Jwt>(environment.URL + 'login', loginUser)
   }
 }

@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { CartProduct } from 'src/app/interfaces/CartProduct.interface';
-import { CredentialsService } from 'src/app/services/credentials.service';
 import { ShoppingCartService } from 'src/app/services/shopping-cart/shopping-cart.service';
 import {  Router } from '@angular/router';
 import { LoginUser } from 'src/app/mock/interfaces/Login.interface';
 import { TokenService } from 'src/app/mock/service/token.service';
+import { UserService } from 'src/app/mock/service/user.service';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -17,7 +17,6 @@ export class HeaderComponent implements OnInit {
   isAuthorized= false;
   constructor(
     private shoppingCartService: ShoppingCartService,
-    private credentials: CredentialsService,
     private router: Router,
     private tokenService: TokenService
   ) {}
@@ -28,7 +27,6 @@ export class HeaderComponent implements OnInit {
         return acc;
       }, 0);
       console.log(this.count);
-      this.credentials.userData.subscribe((data) => (this.userData = data));
       console.log(this.userData);
     });
     if(this.tokenService.getToken()){

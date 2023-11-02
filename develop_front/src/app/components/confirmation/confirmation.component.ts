@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CartProduct } from 'src/app/interfaces/CartProduct.interface';
-import { User } from 'src/app/interfaces/User.interface';
-import { CredentialsService } from 'src/app/services/credentials.service';
 import { ShoppingCartService } from 'src/app/services/shopping-cart/shopping-cart.service';
+import { LoginUser } from 'src/app/mock/interfaces/Login.interface';
 
 @Component({
   selector: 'app-confirmation',
@@ -10,12 +9,11 @@ import { ShoppingCartService } from 'src/app/services/shopping-cart/shopping-car
   styleUrls: ['./confirmation.component.css']
 })
 export class ConfirmationComponent implements OnInit{
-  userData!: User;
+  userData!: LoginUser;
   count: number = 0;
 
   constructor(
     private shoppingCartService: ShoppingCartService,
-    private credentials: CredentialsService,
   ) {}
   ngOnInit() {
     this.shoppingCartService.productsInCart.subscribe((data) => {
@@ -24,7 +22,6 @@ export class ConfirmationComponent implements OnInit{
         return acc;
       }, 0);
       console.log(this.count);
-      this.credentials.userData.subscribe((data) => (this.userData = data));
       console.log(this.userData);
     });
   }

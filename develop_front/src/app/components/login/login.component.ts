@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private tokenService: TokenService, 
-    private loginService: UserService,
+    private userService: UserService,
     private router: Router){}
   ngOnInit(): void {
     if(this.tokenService.getToken()){
@@ -37,12 +37,12 @@ export class LoginComponent implements OnInit {
   }
 
   onLogin(): void{
-    this.loginUser = new LoginUser(this.userName, this.password); 
-    this.loginService.login(this.loginUser).subscribe(data =>{
+    this.loginUser = new LoginUser(this.email, this.password); 
+    this.userService.login(this.loginUser).subscribe(data =>{
         this.isLogged = true;
         this.isLogginFail = false;
         this.tokenService.setToken(data.token);
-        this.tokenService.setUserName(data.userName);
+        this.tokenService.setEmail(data.email);
         this.tokenService.setAuthorities(data.authorities);
         this.roles = data.authorities;
         this.router.navigate([''])
@@ -51,13 +51,14 @@ export class LoginComponent implements OnInit {
         this.isLogginFail = true;
         this.errMsj = err.error.mensaje;
         console.log(this.errMsj);
+        alert("falló");
         
       })
   }
 
   onSingUp(): void{
     const newUser = new NewUser(this.name, this.email, this.password);
-    this.loginService.new(newUser).subscribe(
+    this.userService.new(newUser).subscribe(
       data =>{
         alert("Usuario creado correctamente");
         this.router.navigate(['']);
