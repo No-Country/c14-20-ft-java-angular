@@ -6,6 +6,7 @@ package com.no_country.foodTech_delivery.api.security.jwt;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.no_country.foodTech_delivery.api.domain.userEntity.UserEntity;
+import com.no_country.foodTech_delivery.api.repositories.UserRepository;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -30,19 +31,25 @@ public class JwtAuthenticationFilter extends UsernamePasswordAuthenticationFilte
     
     private JwtUtils jwrUtils;
     
-    public JwtAuthenticationFilter(JwtUtils jwtUtils){
+    private UserRepository userRepository;
+    
+    public JwtAuthenticationFilter(JwtUtils jwtUtils, UserRepository userRepository){
         this.jwrUtils = jwtUtils;
+        this.userRepository = userRepository;
+        
     }
     
     @Override
     public Authentication attemptAuthentication(HttpServletRequest request, HttpServletResponse response) throws AuthenticationException {
-        UserEntity userEntity = null;
+        UserEntity userEntity;
         String userName = "";
         String password = "";
+        String name = "";
         try {
             userEntity = new ObjectMapper().readValue(request.getInputStream(), UserEntity.class);
             userName = userEntity.getEmail();
             password = userEntity.getPassword();
+            name = userEntity.getName();
         } catch (IOException e) {
         }
         
@@ -53,12 +60,15 @@ public class JwtAuthenticationFilter extends UsernamePasswordAuthenticationFilte
     @Override
     protected void successfulAuthentication(HttpServletRequest request, HttpServletResponse response, FilterChain chain, Authentication authResult) throws IOException, ServletException {
         User user = (User)authResult.getPrincipal();
+        UserEntity userEntity = userRepository.findByEmail(user.getUsername()).get();
         String token = jwrUtils.generateAccessToken(user.getUsername());
         response.addHeader("Authorization", token);
         Map<String, Object> httpResponse = new HashMap<>();
         httpResponse.put("token", token);
         httpResponse.put("Message", "Autenticacion correcta");
-        httpResponse.put("Username", user.getUsername());
+        httpResponse.put("email", user.getUsername());
+        httpResponse.put("role", user.getAuthorities().toString());
+        httpResponse.put("name", userEntity.getName());
         response.getWriter().write(new ObjectMapper().writeValueAsString(httpResponse));
         response.setStatus(HttpStatus.OK.value());
         response.setContentType(MediaType.APPLICATION_JSON_VALUE);

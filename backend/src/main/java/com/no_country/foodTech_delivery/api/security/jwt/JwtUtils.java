@@ -54,8 +54,8 @@ public class JwtUtils {
     
     public String getUserNameFromToken(String token){
         return getClaim(token, Claims::getSubject);
-    }
-    
+    }    
+        
     public <T> T getClaim(String token, Function<Claims, T> clainsTFunction){
         Claims claims = extractAllClaims(token);
         return clainsTFunction.apply(claims);
