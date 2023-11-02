@@ -9,7 +9,7 @@ import { Product } from '../interfaces/Product.interface';
 })
 export class ProductService {
 
-  URL = environment.URL + '/api/products'
+  URL = environment.URL + 'api/products'
 
 
   constructor(private httpClient : HttpClient) { }
