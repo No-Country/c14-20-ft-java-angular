@@ -1,0 +1,5 @@
+# Created at 2023-11-02T19:02:22.903
+Boot Manifest-JAR contains absolute paths in classpath 'D:\Proyecto\Proyectos\no-Country\c14-20-ft-java-angular\backend\target\test-classes'
+Hint: <argLine>-Djdk.net.URLClassPath.disableClassPathURLCheck=true</argLine>
+'other' has different root
+
