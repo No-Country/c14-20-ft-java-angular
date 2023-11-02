@@ -1,4 +1,4 @@
-FROM openjdk:17-alpine
+FROM openjdk:17
 MAINTAINER API
 VOLUME /tmp
 COPY target/api-0.0.1-SNAPSHOT.jar  api-app.jar
