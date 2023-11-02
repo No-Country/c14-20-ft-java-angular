@@ -21,6 +21,7 @@ export class ProductsComponent implements OnInit {
 
   ngOnInit(): void {
     this.cargarProducto();
+    
     if(this.tokenService.getToken()){
       this.isLogged = true;
     } else {
