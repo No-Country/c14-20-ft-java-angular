@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.no_country.foodTech_delivery.api.C1420FtJavaAngularApplicationTests
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 28.562 s - in com.no_country.foodTech_delivery.api.C1420FtJavaAngularApplicationTests
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 33.485 s - in com.no_country.foodTech_delivery.api.C1420FtJavaAngularApplicationTests
