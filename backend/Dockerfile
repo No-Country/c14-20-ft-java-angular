@@ -17,7 +17,7 @@ FROM openjdk:17-alpine
 EXPOSE 8080
 
 # Copiar el archivo JAR construido desde la etapa anterior
-COPY --from=build /app/target/c14-20-ft-java-angular-0.0.1-SNAPSHOT.jar /app/c14-20-ft-java-angular-0.0.1-SNAPSHOT.jar
+COPY --from=build /app/target/api-0.0.1-SNAPSHOT.jar /app/api-0.0.1-SNAPSHOT.jar
 
 # Establecer el punto de entrada para ejecutar la aplicación
-ENTRYPOINT ["java", "-jar", "/app/c14-20-ft-java-angular-0.0.1-SNAPSHOT.jar"]
+ENTRYPOINT ["java", "-jar", "/app/api-0.0.1-SNAPSHOT.jar"]
