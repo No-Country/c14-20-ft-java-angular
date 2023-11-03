@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { CartProduct } from 'src/app/interfaces/CartProduct.interface';
 import { ShoppingCartService } from 'src/app/services/shopping-cart/shopping-cart.service';
-import { Order } from 'src/app/interfaces/Order.interface';
 import { CredentialsService } from 'src/app/services/credentials/credentials.service';
 import { User } from 'src/app/interfaces/User.interface';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-confirmation',
@@ -17,6 +17,7 @@ export class ConfirmationComponent implements OnInit{
   constructor(
     private shoppingCartService: ShoppingCartService,
     private credentials: CredentialsService,
+    private router: Router
   ) {}
   ngOnInit() {
     this.shoppingCartService.productsInCart.subscribe((data) => {
@@ -30,5 +31,7 @@ export class ConfirmationComponent implements OnInit{
     });
   }
   
-
+  redirectTo(path: string) {
+    this.router.navigate([path]);
+  }
 }

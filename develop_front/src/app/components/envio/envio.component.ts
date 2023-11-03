@@ -33,7 +33,7 @@ export class EnvioComponent {
     console.log(this.registerForm);
 
     this.credentials.newOrder(this.registerForm.value);
-    this.router.navigate(['/home/confirmacion']);
+    this.router.navigate(['/confirmacion']);
   }
 
 }

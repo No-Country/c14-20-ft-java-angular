@@ -1,11 +1,4 @@
 <mat-toolbar>
-  <!-- <button
-    mat-icon-button
-    class="example-icon"
-    aria-label="Example icon-button with menu icon"
-  >
-    <mat-icon>menu</mat-icon>
-  </button> -->
   <button class="menu" mat-icon-button>
     <mat-icon>menu</mat-icon>
   </button>
@@ -15,9 +8,6 @@
     src="../../../assets/img/logo-white.svg"
     alt="home-logo"
   />
-  <!-- <span>Delicious Health</span> -->
-
-  <!-- <span class="example-spacer"></span> -->
   <div class="nav-bar-container">
     <button
       mat-icon-button
@@ -35,18 +25,17 @@
       data-target="#exampleModalCenter"
       data-toggle="modal"
     >
-      <!-- <span>Bruno OSuna</span> -->
       <img src="\assets\img\🦆 icon _profile circled_.png" alt="" >
     </button>
     <h4 *ngIf="userData" class="user-p">
       {{ userData.email }}
     </h4>
     <button mat-icon-button *ngIf="userData">
-      <!-- <span>Bruno OSuna</span> -->
       <mat-icon >logout</mat-icon>
     </button>
   </div>
 </mat-toolbar>
+
 <!--Modal-Content-->
 <div
   class="modal fade"

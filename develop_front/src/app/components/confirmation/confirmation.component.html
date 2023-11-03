@@ -1,3 +1,57 @@
+<mat-toolbar>
+    <button class="menu" mat-icon-button>
+      <mat-icon>menu</mat-icon>
+    </button>
+    <img
+      (click)="redirectTo('/home')"
+      id="logo"
+      src="../../../assets/img/logo-white.svg"
+      alt="home-logo"
+    />
+    <div class="nav-bar-container">
+      <button
+        mat-icon-button
+        class="shopping-cart"
+        (click)="redirectTo('/home/shopping-cart')"
+      >
+      
+        <mat-icon [matBadge]="count" matBadgeColor="warn"><img src="\assets\img\🦆 icon _cart_.png" alt=""></mat-icon>
+      </button>
+  
+      <button
+        mat-icon-button
+        class="example-icon favorite-icon"
+        aria-label="Example icon-button with heart icon"
+        data-target="#exampleModalCenter"
+        data-toggle="modal"
+      >
+        <img src="\assets\img\🦆 icon _profile circled_.png" alt="" >
+      </button>
+      <h4 *ngIf="userData" class="user-p">
+        {{ userData.email }}
+      </h4>
+      <button mat-icon-button *ngIf="userData">
+        <mat-icon >logout</mat-icon>
+      </button>
+    </div>
+  </mat-toolbar>
+  
+  <!--Modal-Content-->
+  <div
+    class="modal fade"
+    id="exampleModalCenter"
+    tabindex="-1"
+    role="dialog"
+    aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content" style="background: none; border: none">
+        <app-login></app-login>
+      </div>
+    </div>
+  </div>
+<!--confirmation-->
 <div class="container"> 
     <div class="body" >
         <h1>¡Gracias por tu compra!</h1>
@@ -8,3 +62,4 @@
         <p>Tiempo estimado de entrga: 30 Min.</p>
     </div>
 </div>
+<app-footer></app-footer>

@@ -16,6 +16,7 @@ import { AdminHomeComponent } from './components/admin-home/admin-home.component
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: 'confirmacion', component: ConfirmationComponent },
   {
     path: 'home',
     component: HomeComponent,
@@ -25,7 +26,6 @@ const routes: Routes = [
       { path: 'my-account', component: MyAccountComponent },
       { path: 'product-info/:idProduct', component: ProductInfoComponent },
       { path: 'envio', component: EnvioComponent },
-      { path: 'confirmacion', component: ConfirmationComponent },
     ],
   },
   {
