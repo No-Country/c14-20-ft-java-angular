@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CartProduct } from 'src/app/interfaces/CartProduct.interface';
 import { ShoppingCartService } from 'src/app/services/shopping-cart/shopping-cart.service';
 import { Router } from '@angular/router';
@@ -8,7 +8,6 @@ import { Router } from '@angular/router';
   styleUrls: ['./shopping-cart.component.css'],
 })
 export class ShoppingCartComponent implements OnInit {
-  
   cartProducts!: CartProduct[];
   totalPrice: number = 0;
   constructor(
@@ -19,17 +18,13 @@ export class ShoppingCartComponent implements OnInit {
     this.shoppingCartService.productsInCart.subscribe((data) => {
       this.cartProducts = data;
       console.log(this.cartProducts);
-      this.updateTotalPrice();
+      this.shoppingCartService.updateTotalPrice();
+    this.totalPrice = this.shoppingCartService.totalPriceInCart;
     });
   }
 
   redirectTo() {
     this.router.navigate(['/home/envio']);
   }
-  updateTotalPrice() {
-    this.cartProducts.forEach((element) => {
-      this.totalPrice += element.quantity * element.product.price;
-    });
-    console.log(this.totalPrice);
-  }
+  
 }

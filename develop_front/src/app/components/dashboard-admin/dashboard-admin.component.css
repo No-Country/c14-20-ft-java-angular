@@ -118,3 +118,7 @@ td{
     margin: 5px;
     cursor: pointer;
 }
+
+#tbody{
+    overflow-y: auto;
+}

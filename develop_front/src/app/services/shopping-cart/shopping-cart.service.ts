@@ -8,11 +8,12 @@ import { Product } from 'src/app/mock/interfaces/Product.interface';
 })
 export class ShoppingCartService {
   //aca deberia hacer un get a los pedidos del usuario que esten en el carrito y traerlos
+  private _totalPriceInCart: number = 0;
   arrayProducts: CartProduct[] = [];
   productsObs: BehaviorSubject<CartProduct[]> = new BehaviorSubject<
     CartProduct[]
   >(this.arrayProducts);
-  total: number = 0;
+  totalPrice: number = 0;
   totalObs: BehaviorSubject<number> = new BehaviorSubject<number>(0);
   constructor() {}
 
@@ -52,4 +53,23 @@ export class ShoppingCartService {
     return this.productsObs.asObservable();
   }
 
-}
+  get totalPriceInCart(): number {
+    return this._totalPriceInCart;
+  }
+
+  set totalPriceInCart(value: number) {
+    this._totalPriceInCart = value;
+  }
+
+  updateTotalPrice() {
+    let totalPrice = 0;
+
+    this.arrayProducts.forEach((element) => {
+      totalPrice += element.quantity * element.product.price;
+    });
+
+    this.totalPrice = totalPrice;
+    this.totalObs.next(this.totalPrice); // Notifica a los suscriptores sobre el cambio en el precio total
+    this.totalPriceInCart = this.totalPrice; // Actualiza la propiedad totalPriceInCart
+  }
+  }

@@ -8,21 +8,26 @@
                 <div class="body-form">
                     <div class="input-group input-group-lg">
                         <input type="text" class="form-control" aria-label="Sizing example input" 
-                        aria-describedby="inputGroup-sizing-lg" placeholder="Nombre completo:">
+                        aria-describedby="inputGroup-sizing-lg" placeholder="Nombre completo:"
+                        formControlName="completeName">
                       </div>
                       <div class="input-group input-group-lg">
                         <input type="text" class="form-control" aria-label="Sizing example input" 
-                        aria-describedby="inputGroup-sizing-lg"  placeholder="Direccion:">
+                        aria-describedby="inputGroup-sizing-lg"  placeholder="Direccion:"
+                        formControlName="direction">
                       </div>
                       <div class="input-group input-group-lg">
                         <input type="text" class="form-control" aria-label="Sizing example input"  placeholder="Provincia:"
-                        aria-describedby="inputGroup-sizing-lg" style="width: 45%; margin-right: 10px;">
+                        aria-describedby="inputGroup-sizing-lg" style="width: 45%; margin-right: 10px;"
+                        formControlName="state">
                         <input type="text" class="form-control" aria-label="Sizing example input"  placeholder="Ciudad:"
-                        aria-describedby="inputGroup-sizing-lg" style="width: 45%;">
+                        aria-describedby="inputGroup-sizing-lg" style="width: 45%;"
+                        formControlName="city">
                       </div>
                       <div class="input-group input-group-lg" style="width: 50%;">
                         <input type="text" class="form-control" aria-label="Sizing example input"  placeholder="Telefono:" 
-                        aria-describedby="inputGroup-sizing-lg">
+                        aria-describedby="inputGroup-sizing-lg"
+                        formControlName="phone">
                       </div>
                 </div>
                 <div class="footer-form">
@@ -43,7 +48,8 @@
                     </div>
                       <p class="p" style="font-size: 22px;">Deberas pagar directamente a tu delivery</p>
                         <div class="finish">
-                            <label class="label" for="login" routerLink="/home/confirmacion">FINALIZAR</label>
+                            <label class="label" 
+                            (click)="onSubmit()">FINALIZAR</label>
                         </div>
                 </div>
             </form>

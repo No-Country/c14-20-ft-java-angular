@@ -2,43 +2,49 @@
     <div class="shooping-cart-container">
       <h1 style="margin: 40px; font-size: 45px; padding: 2%;">
         <b>Pedidos</b></h1>
-      <div class="table-price-container row justify-content-between gy-5">
         <div class="table col-lg-5 d-flex flex-column">
-        <div class="table-titles">
-          <h3>Plato</h3>
-          <h3>Cantidad</h3>
-          <h3>Pago</h3>
-          <h3>Direccion de envio</h3>
-          <h3>Cliente</h3>
+          <div class="table-titles" style="margin-bottom: 20px;">
+            <h3>Plato</h3>
+            <h3>Cantidad</h3>
+            <h3>Pago</h3>
+            <h3>Direccion de envio</h3>
+            <h3>Cliente</h3>
+            <h3>Estatus</h3>
+          </div>
         </div>
-        <div class="cart-single">
-            <div class="single-cart-product">
-                <div class="img-title">
-                  <img id="cart-img" src="\assets\img\products\plato15.jpeg" alt="" />
-                  <br>
-                  <h3 class="name">nombre</h3>
-                </div>
-                <h3 class="name">nombre</h3>
-                <h3 class="name">nombre</h3>
-                <h3 class="name">nombre</h3>
-                <h3 class="name">nombre</h3>
-              </div>
+        <div class="ngcoint">
+          <div class="table-price-container row justify-content-between gy-5"
+          *ngFor="let ped of pedidos">
+            <div class="table col-lg-5 d-flex flex-column">
+            <div class="cart-single">
+                <div class="single-cart-product">
+                    <div class="img-title">
+                      <img id="cart-img" src="{{ped.image}}" alt="" />
+                      <br>
+                      <h3 class="name">{{ped.name}}</h3>
+                    </div>
+                    <h3 class="name">{{ped.cantidad}}</h3>
+                    <h3 class="name">{{ped.pago}}</h3>
+                    <h3 class="name">{{ped.direccion}}</h3>
+                    <h3 class="name">{{ped.cliente}}</h3>
+                  </div>
+            </div>
+            </div>
+            <div class="table col-lg-5  d-flex flex-column" style="max-width: 15%; height: 85%;">
+              
+              <div class="price"
+              style="width: 20vw;">
+                <div class="radio-item" style="margin: 2%;"><label for="radio1{{ped.idPedido}}">
+                  <h3 style="margin: 1%; font-size: 1.3vw; font-weight: bold;"
+                  >Preparacion</h3></label>
+                  <br><input name="radio" id="radio1{{ped.idPedido}}" type="radio"></div>
+                <div class="radio-item" style="margin: 2%;"><label for="radio2{{ped.idPedido}}">
+                  <h3 style="margin: 1%; font-size: 1.3vw; font-weight: bold;"
+                  >Despacho</h3></label>
+                  <br><input name="radio" id="radio2{{ped.idPedido}}" type="radio"></div>
+            </div>
+            </div>
         </div>
         </div>
-        <div class="table col-lg-5  d-flex flex-column" style="max-width: 15%; height: 100%;">
-          <h3 class="price-title"><b>Estatus</b></h3>
-          <div class="price"
-          style="width: 20vw;">
-            <div class="radio-item" style="margin: 2%;"><label for="radio1">
-              <h3 style="margin: 1%; font-size: 1.3vw; font-weight: bold;"
-              >Preparacion</h3></label>
-              <br><input name="radio" id="radio1" type="radio"></div>
-            <div class="radio-item" style="margin: 2%;"><label for="radio2">
-              <h3 style="margin: 1%; font-size: 1.3vw; font-weight: bold;"
-              >Despacho</h3></label>
-              <br><input name="radio" id="radio2" type="radio"></div>
-        </div>
-        </div>
-    </div>
     </div>
   </section>

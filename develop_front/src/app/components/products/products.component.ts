@@ -1,8 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { Product } from 'src/app/mock/interfaces/Product.interface';
-import { ProductService } from 'src/app/mock/service/product.service';
-import { TokenService } from 'src/app/mock/service/token.service';
-import { ShoppingCartService } from 'src/app/services/shopping-cart/shopping-cart.service';
+import { Component, OnInit } from '@angular/core';
+import { Route, Router } from '@angular/router';
+import { Product } from 'src/app/interfaces/Product.interface';
+import { ProductService } from 'src/app/services/product/product.service';
 
 @Component({
   selector: 'app-products',
@@ -10,53 +9,16 @@ import { ShoppingCartService } from 'src/app/services/shopping-cart/shopping-car
   styleUrls: ['./products.component.css'],
 })
 export class ProductsComponent implements OnInit {
-  productos: Product[] = [];
-  singleProductCount: number = 0;
-  @Input() product!: Product;
-
-  constructor(private prodS: ProductService, 
-    private tokenService: TokenService,
-    private shoppingCartService: ShoppingCartService) { }
-  isLogged = false;
-
+  arrayProducts: Product[] = [];
+  constructor(private productService: ProductService, private router: Router) {}
   ngOnInit(): void {
-    this.cargarProducto();
-    
-    if(this.tokenService.getToken()){
-      this.isLogged = true;
-    } else {
-      this.isLogged = false;
-    }
-
-    this.shoppingCartService.productsInCart.subscribe((data) =>
-      console.log(data)
-    );
-    this.singleProductCount = this.shoppingCartService.getSingleProductCount(
-      this.product
-    );
-
+    this.productService.products.subscribe((data) => {
+      this.arrayProducts = data;
+      console.log(this.arrayProducts);
+    });
   }
 
-  cargarProducto(): void{
-    this.prodS.list().subscribe(
-      data =>{
-        this.productos = data;
-      }
-    )
-  }
-
-  onAddToCart() {
-    this.shoppingCartService.addToCart(this.product);
-    this.singleProductCount = this.shoppingCartService.getSingleProductCount(
-      this.product
-    );
-    console.log(this.singleProductCount);
-  }
-  onDelete() {
-    this.shoppingCartService.deleteFromCart(this.product);
-    this.singleProductCount = this.shoppingCartService.getSingleProductCount(
-      this.product
-    );
-    console.log(this.singleProductCount);
+  goToProductDetail(id: number): void {
+    this.router.navigate(['/home/product-info/', id]);
   }
 }

@@ -29,7 +29,7 @@
                   <h1><b>Iniciar Sesion</b></h1>
                   <br />
                   <!-- Login Form -->
-                  <form class="form-group" #f="ngForm" (ngSubmit)="onLogin()" novalidate>
+                  <form class="form-group" [formGroup]="registerForm" novalidate>
                     <div class="col-10">
                       <input
                         type="email"
@@ -38,7 +38,6 @@
                         name="email"
                         placeholder="Correo Electronico"
                         formControlName="email"
-                        [(ngModel)]="email"
                         required
                       />
                       <input
@@ -48,10 +47,9 @@
                         name="password"
                         formControlName="password"
                         placeholder="Contraseña"
-                        [(ngModel)]="password"
                         required
                       />
-                      <button class="buttonI" ><b>Ingresar</b></button>
+                      <button class="buttonI" (click)="onSubmit()" data-dismiss="modal"><b>Ingresar</b></button>
                     </div>
                   </form>
                   <div id="formFooter">
@@ -68,7 +66,7 @@
                   <br />
                   <div class="row-g3">
                     <!-- Register Form -->
-                    <form class="form-group" #f="ngForm" (ngSubmit)="onSingUp()" novalidate>
+                    <form class="form-group"  novalidate>
                       <div class="col-10">
                         <input
                           type="text"
@@ -77,7 +75,6 @@
                           name="name"
                           placeholder="Nombre"
                           formControlName="name"
-                          [(ngModel)]="name"
                           required
                         />
                         <input
@@ -96,7 +93,6 @@
                           name="email"
                           placeholder="Correo Electronico"
                           formControlName="email"
-                          [(ngModel)]="email"
                           required
                         />
                         <input
@@ -106,7 +102,6 @@
                           name="password"
                           placeholder="Contraseña"
                           formControlName="password"
-                          [(ngModel)]="password"
                           required
                         /> 
                   <button class="buttonCC" >

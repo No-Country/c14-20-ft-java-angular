@@ -19,12 +19,6 @@
 
   <!-- <span class="example-spacer"></span> -->
   <div class="nav-bar-container">
-    
-    <button
-    mat-icon-button *ngIf="isAuthorized"
-      >
-      <img src="\assets\img\🦆 icon _bell_.png" alt="">
-    </button>
     <button
       mat-icon-button
       class="shopping-cart"
@@ -38,18 +32,18 @@
       mat-icon-button
       class="example-icon favorite-icon"
       aria-label="Example icon-button with heart icon"
-      data-toggle="modal"
       data-target="#exampleModalCenter"
+      data-toggle="modal"
     >
       <!-- <span>Bruno OSuna</span> -->
-      <img src="\assets\img\🦆 icon _profile circled_.png" alt="" *ngIf="!isLogged">
+      <img src="\assets\img\🦆 icon _profile circled_.png" alt="" >
     </button>
     <h4 *ngIf="userData" class="user-p">
       {{ userData.email }}
     </h4>
     <button mat-icon-button *ngIf="userData">
       <!-- <span>Bruno OSuna</span> -->
-      <mat-icon (click)="onLogOut()" *ngIf="isLogged">logout</mat-icon>
+      <mat-icon >logout</mat-icon>
     </button>
   </div>
 </mat-toolbar>

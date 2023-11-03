@@ -1,0 +1,47 @@
+[
+    {
+        "idPedido": 1,
+        "image": "https://i.imgur.com/cZurIW1.jpg",
+        "name": "Ensalada Quinua",
+        "cantidad": 3,
+        "pago": "Credito",
+        "direccion": "Colombia 3640",
+        "cliente": "Jaime"
+      },
+      {
+        "idPedido": 2,
+        "image": "https://i.imgur.com/NGITrW3.jpg",
+        "name": "Granola",
+        "cantidad": 5,
+        "pago": "Efectivo",
+        "direccion": "Venezuela 3028",
+        "cliente": "Roxana"
+      },
+      {
+        "idPedido": 3,
+        "image": "https://i.imgur.com/83PWjP8.jpg",
+        "name": "Zanahoria pepino",
+        "cantidad": 7,
+        "pago": "Efectivo",
+        "direccion": "Argentina 2425",
+        "cliente": "Lucas"
+      },
+      {
+        "idPedido": 4,
+        "image": "https://i.imgur.com/gY7DRXn.jpg",
+        "name": "Huevos cocidos",
+        "cantidad": 3,
+        "pago": "Credito",
+        "direccion": "Pujato 1298",
+        "cliente": "Kiara"
+      },
+      {
+        "idPedido": 5,
+        "image": "https://i.imgur.com/xKMMlZS.jpg",
+        "name": "Ensalada de huevo",
+        "cantidad": 10,
+        "pago": "Credito",
+        "direccion": "Quinua 7563",
+        "cliente": "Roberto"
+      }
+]

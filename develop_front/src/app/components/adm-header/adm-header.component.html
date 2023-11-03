@@ -1,0 +1,71 @@
+<mat-toolbar>
+    <!-- <button
+      mat-icon-button
+      class="example-icon"
+      aria-label="Example icon-button with menu icon"
+    >
+      <mat-icon>menu</mat-icon>
+    </button> -->
+    <button class="menu" mat-icon-button>
+      <mat-icon>menu</mat-icon>
+    </button>
+    <img
+      (click)="redirectTo('/admin-home')"
+      id="logo"
+      src="../../../assets/img/logo-white.svg"
+      alt="home-logo"
+    />
+    <!-- <span>Delicious Health</span> -->
+  
+    <!-- <span class="example-spacer"></span> -->
+    <div class="nav-bar-container">
+      
+      <button
+      mat-icon-button
+      routerLink="/admin-home/envios"
+      [matBadge]="5" matBadgeColor="warn"
+        >
+        <img src="\assets\img\🦆 icon _bell_.png" alt="">
+      </button>
+  
+      <button
+        mat-icon-button
+        class="example-icon favorite-icon"
+        aria-label="Example icon-button with heart icon"
+        data-target="#exampleModalCenter"
+        data-toggle="modal"
+      >
+        <!-- <span>Bruno OSuna</span> -->
+        <img src="\assets\img\🦆 icon _profile circled_.png" alt="" >
+      </button>
+      <h4 *ngIf="userData" class="user-p">
+        {{ userData.email }}
+      </h4>
+      <button mat-icon-button *ngIf="userData">
+        <!-- <span>Bruno OSuna</span> -->
+        <mat-icon >logout</mat-icon>
+      </button>
+    </div>
+  </mat-toolbar>
+  <!--Modal-Content-->
+  <div
+    class="modal fade"
+    id="exampleModalCenter"
+    tabindex="-1"
+    role="dialog"
+    aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content" style="background: none; border: none">
+        <app-login></app-login>
+      </div>
+    </div>
+  </div>
+  
+  <!--Banner-->
+  <section class="banner d-flex flex-column align-items-center justify-content-end">
+    <div class="bg-5 text-center">
+      <h1 style="color: white;">COMIDA SANA A LA PUERTA DE TU CASA</h1>
+    </div>
+  </section>

@@ -12,6 +12,7 @@ import { DashboardAdminComponent } from './components/dashboard-admin/dashboard-
 import { CreateFoodComponent } from './components/create-food/create-food.component';
 import { UpdateFoodComponent } from './components/create-food/update-food.component';
 import { EnviosComponent } from './components/envios/envios.component';
+import { AdminHomeComponent } from './components/admin-home/admin-home.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -25,9 +26,15 @@ const routes: Routes = [
       { path: 'product-info/:idProduct', component: ProductInfoComponent },
       { path: 'envio', component: EnvioComponent },
       { path: 'confirmacion', component: ConfirmationComponent },
-      { path: 'admin-dashboard', component: DashboardAdminComponent },
+    ],
+  },
+  {
+    path: 'admin-home',
+    component: AdminHomeComponent,
+    children: [
+      { path: '', component: DashboardAdminComponent },
       { path: 'create-food', component: CreateFoodComponent },
-      { path: 'update-food/:idProduct', component: UpdateFoodComponent },
+      { path: 'update-food', component: UpdateFoodComponent },
       { path: 'envios', component: EnviosComponent },
     ],
   },

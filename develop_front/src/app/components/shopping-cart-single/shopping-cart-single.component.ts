@@ -9,9 +9,7 @@ import { ShoppingCartService } from 'src/app/services/shopping-cart/shopping-car
 })
 export class ShoppingCartSingleComponent implements OnInit {
   singleProductCount: number = 0;
-  subTotalPrice: number = 0;
-  subTotalList: number[] = [];
-  totalPrice : number = 0;
+  subTotalPrice: Number = 0;
   @Input() cartProduct!: CartProduct;
   constructor(
     private shoppingCartService: ShoppingCartService
@@ -25,9 +23,6 @@ export class ShoppingCartSingleComponent implements OnInit {
     );
     this.subTotalPrice =
       this.singleProductCount * this.cartProduct.product.price;
-
-      this.totalPrice += this.subTotalPrice;
-
   }
   onAddToCart() {
     this.shoppingCartService.addToCart(this.cartProduct.product);

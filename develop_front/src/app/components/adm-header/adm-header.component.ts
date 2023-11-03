@@ -1,15 +1,16 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { CartProduct } from 'src/app/interfaces/CartProduct.interface';
-import { ShoppingCartService } from 'src/app/services/shopping-cart/shopping-cart.service';
-import {  Router } from '@angular/router';
 import { User } from 'src/app/interfaces/User.interface';
 import { CredentialsService } from 'src/app/services/credentials/credentials.service';
+import { ShoppingCartService } from 'src/app/services/shopping-cart/shopping-cart.service';
+
 @Component({
-  selector: 'app-header',
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css'],
+  selector: 'app-adm-header',
+  templateUrl: './adm-header.component.html',
+  styleUrls: ['./adm-header.component.css']
 })
-export class HeaderComponent implements OnInit {
+export class AdmHeaderComponent implements OnInit {
   userData!: User;
   count: number = 0; //si se trae los datos del back aca la cantidad  deberia iniciarlizarse con los datos de lback, no en 0
   constructor(

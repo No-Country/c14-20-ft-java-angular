@@ -18,26 +18,5 @@ export class UpdateFoodComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    const id = this.activatedRouter.snapshot.params['id'];
-    this.prodS.detail(id).subscribe(
-      data =>{
-        this.product = data;
-      }, err =>{
-         alert("Error al modificar");
-         this.router.navigate(['']);
-      }
-    )
-  }
-
-  onUpdate(): void{
-    const id = this.activatedRouter.snapshot.params['id'];
-    this.prodS.update(id, this.product).subscribe(
-      data => {
-        this.router.navigate(['']);
-      }, err => {
-        alert("Error al modificar la educacion");
-        this.router.navigate(['']);
-      }
-    )
   }
 }

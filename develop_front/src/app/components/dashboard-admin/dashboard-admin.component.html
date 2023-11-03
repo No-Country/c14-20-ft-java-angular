@@ -2,7 +2,7 @@
   <div class="container"> 
     <div class="table-body" >
         <div class="button">
-            <label routerLink="/home/create-food"><p>Añadir productos <img src="\assets\img\🦆 icon _add circled outline_.png" alt=""></p></label>
+            <label routerLink="/admin-home/create-food"><p>Añadir productos <img src="\assets\img\🦆 icon _add circled outline_.png" alt=""></p></label>
         </div>
         <table class="table">
             <thead >
@@ -14,8 +14,8 @@
                 <th class="title" scope="col"></th>
               </tr>
             </thead>
-            <tbody *ngFor="let product of producto">
-              <tr>
+            <tbody>
+              <tr *ngFor="let product of producto">
                 <td class="content1">
                     <img src="{{ product.image }}" alt="">
                 </td>
@@ -27,11 +27,17 @@
                     <p>{{ product.stock}}</p>
                 </td>
                 <td class="content4">
-                   <p> {{ product.price}}</p>
+                   <p> ${{ product.price}}</p>
                 </td>
                 <td class="content5">
-                    <img src="\assets\img\🦆 icon _edit pencil_.png" alt="" routerLink="/update-food/{{product.idProduct}}">
-                    <img src="\assets\img\🦆 icon _trash_.png" alt="" (click)="delete(product.idProduct)">
+                  <button
+                  mat-icon-button>
+                  <img src="\assets\img\🦆 icon _edit pencil_.png" alt="" routerLink="/admin-home/update-food">
+                </button>
+                <button
+                  mat-icon-button>
+                  <img src="\assets\img\🦆 icon _trash_.png" alt="">
+                </button>
                 </td>
               </tr>
             </tbody>

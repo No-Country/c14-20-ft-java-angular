@@ -1,0 +1,60 @@
+.mat-toolbar {
+    background: linear-gradient(90deg, #4e9b57 0%, #6abd74 48.33%, #4e9b57 100%);
+    color: var(--primary-text);
+    display: flex;
+    justify-content: space-between;
+    height: 8vh;
+  }
+  img{
+    cursor: pointer;
+  }
+  #logo {
+    min-width: 20vw;
+    object-fit: contain;
+  }
+  .menu {
+    display: none;
+  }
+  .nav-bar-container {
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  
+  @media (max-width: 475px) {
+    .user {
+      display: none;
+    }
+    .menu {
+      display: flex;
+    }
+  }
+  
+  
+  @media only screen and (max-width: 900px) {
+    .banner {
+      height: 20vh;
+      width: 100vw;
+      background-image: url("src/assets/img/home-banner-mobile.png");
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    h1{
+      font-size: 1rem;
+    }
+  }
+  @media only screen and (min-width: 901px) {
+  .banner {
+    height: 40vh;
+    width: 100vw;
+    background-image: url("src/assets/img/home-banner2.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  h1{
+    font-size: 3rem;
+  }
+  }

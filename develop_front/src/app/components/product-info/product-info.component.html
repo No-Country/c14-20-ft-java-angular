@@ -4,19 +4,19 @@
       <div
         class="col-lg-5 order-2 order-lg-1 d-flex flex-column justify-content-center align-items-center align-items-lg-start text-center text-lg-start"
       >
-        <img class="product" src="{{product.image}}" />
+        <img class="product" src="{{image}}" />
       </div>
       <div
         class="col-lg-5 order-1 order-lg-2 d-flex flex-column justify-content-center align-items-center align-items-lg-start text-center text-lg-start"
       >
-        <h1 style="color: #656565; font-size: 40px"><b>{{product.name}}</b></h1>
+        <h1 style="color: #656565; font-size: 40px"><b>{{name}}</b></h1>
         <br />
         <p style="color: #656565; font-size: 32px; line-height: 30px">
-          {{product.description}}
+          {{description}}
         </p>
         <br />
         <div class="noresponsive">
-          <h1 style="color: #4e9b57; font-size: 36px"><b>${{product.price}}</b></h1>
+          <h1 style="color: #4e9b57; font-size: 36px"><b>${{price}}</b></h1>
           <br />
           <button
             style="
@@ -44,7 +44,7 @@
               style="border: solid #9dcca3; width: 213px; border-radius: 10px"
             >
               <button
-              (click)="onDelete()"
+              onclick="this.parentNode.querySelector('input[type=number]').stepDown()"
                 class="minus"
                 style="
                   border: none;
@@ -62,7 +62,7 @@
                 class="quantity"
                 min="0"
                 name="quantity"
-                value="{{ singleProductCount }}"
+                value="1"
                 type="number"
                 style="
                   align-items: center;
@@ -73,7 +73,7 @@
                 "
               />
               <button
-              (click)="onAddToCart()"
+              onclick="this.parentNode.querySelector('input[type=number]').stepUp()"
                 class="plus"
                 style="
                   border: none;
@@ -182,4 +182,3 @@
     </div>
   </div>
 </section>
-

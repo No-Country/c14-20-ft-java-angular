@@ -25,6 +25,8 @@ import { DashboardAdminComponent } from './components/dashboard-admin/dashboard-
 import { CreateFoodComponent } from './components/create-food/create-food.component';
 import { UpdateFoodComponent } from './components/create-food/update-food.component';
 import { EnviosComponent } from './components/envios/envios.component';
+import { AdminHomeComponent } from './components/admin-home/admin-home.component';
+import { AdmHeaderComponent } from './components/adm-header/adm-header.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +48,9 @@ import { EnviosComponent } from './components/envios/envios.component';
     DashboardAdminComponent,
     CreateFoodComponent,
     UpdateFoodComponent,
-    EnviosComponent
+    EnviosComponent,
+    AdminHomeComponent,
+    AdmHeaderComponent
   ],
   imports: [
     BrowserModule,
